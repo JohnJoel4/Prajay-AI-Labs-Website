@@ -1,0 +1,130 @@
+/* General styles for the Contact Us page */
+.page-content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.page-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Contact button styles */
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles */
+.footer-content {
+    background-color: #2c3e50;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    color: #999999;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.legal-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.legal-links li {
+    margin: 0 10px;
+}
+
+.legal-links li a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.legal-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Page specific styles */
+body {
+    background-color: var(--bg-light);
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary-color);
+}
+
+p {
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Example section styles */
+.section {
+    margin-bottom: 60px;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.1rem;
+}
+
+/* Add any additional styles specific to the "Contact Us" page here */
