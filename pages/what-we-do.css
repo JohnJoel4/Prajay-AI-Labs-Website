@@ -1,129 +1,159 @@
-/* Reset and base styles */
+/* Reset and Base Styles */
+/* Reset default margins and paddings for all elements and apply box-sizing globally for consistent layout calculations */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Define CSS custom properties (variables) for consistent theming and easy maintenance */
 :root {
-    --primary-color: #f39c12;
-    --secondary-color: #2c3e50;
-    --bg-light: #f9f9f9;
-    --bg-white: #ffffff;
-    --text-dark: #333333;
-    --text-medium: #5a6a7a;
-    --text-light: #999999;
-    --shadow-light: rgba(0, 0, 0, 0.08);
-    --shadow-medium: rgba(0, 0, 0, 0.15);
-    --shadow-primary: rgba(243, 156, 18, 0.3);
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    --primary-color: #f39c12;       /* Primary brand color for accents and highlights */
+    --secondary-color: #2c3e50;     /* Secondary color for text and backgrounds */
+    --bg-light: #f9f9f9;           /* Light background color for sections */
+    --bg-white: #ffffff;           /* Pure white for clean backgrounds */
+    --text-dark: #333333;          /* Dark text color for high contrast */
+    --text-medium: #5a6a7a;        /* Medium gray for secondary text */
+    --text-light: #999999;         /* Light gray for subtle text */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+    --shadow-medium: rgba(0, 0, 0, 0.15); /* Medium shadow for hover effects */
+    --shadow-primary: rgba(243, 156, 18, 0.3); /* Primary-colored shadow for emphasis */
+    --transition-fast: 0.2s ease;  /* Fast transition for subtle animations */
+    --transition-normal: 0.3s ease; /* Standard transition speed for interactivity */
+    --transition-slow: 0.5s ease;  /* Slow transition for dramatic effects */
+    --font-primary: 'Poppins', sans-serif; /* Primary font for headings */
+    --font-secondary: 'Roboto', sans-serif; /* Secondary font for body text */
 }
 
+/* Set default body styles for typography, layout, and background */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: var(--font-primary); /* Use primary font as default */
     margin: 0;
     padding: 0;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: var(--bg-light); /* Light background for entire page */
+    color: var(--text-dark);           /* Dark text for readability */
+    line-height: 1.6;                  /* Improved readability with line spacing */
+    overflow-x: hidden;                /* Prevent unintended horizontal scrolling */
 }
 
+/* Style links with no underline and smooth color transition */
 a {
     text-decoration: none;
-    color: var(--secondary-color);
-    transition: color var(--transition-normal);
+    color: var(--secondary-color);     /* Default link color */
+    transition: color var(--transition-normal); /* Smooth color change on hover */
 }
 
+/* Remove default list styling for cleaner layouts */
 ul {
     list-style: none;
 }
 
-/* Header Styles */
-header {
-    background-color: var(--bg-white);
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(221, 221, 221, 0.5);
-    box-shadow: 0 2px 12px var(--shadow-light);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: box-shadow 0.4s ease;
+/* Container class for consistent content width and centering */
+.container {
+    max-width: 1200px;                 /* Limit content width for readability */
+    margin: 0 auto;                    /* Center container horizontally */
+    padding: 0 20px;                   /* Add horizontal padding */
 }
 
+/* Header Styles */
+/* Style header with sticky positioning and subtle shadow */
+header {
+    background-color: var(--bg-white);
+    padding: 15px 20px;                /* Consistent padding */
+    border-bottom: 1px solid rgba(221, 221, 221, 0.5); /* Light border for separation */
+    box-shadow: 0 2px 12px var(--shadow-light); /* Subtle elevation */
+    position: sticky;                  /* Sticks to top on scroll */
+    top: 0;
+    z-index: 1000;                     /* Ensure header stays above other content */
+    transition: box-shadow 0.4s ease;  /* Smooth shadow transition on hover */
+}
+
+/* Enhance shadow on header hover for interactivity */
 header:hover {
     box-shadow: 0 4px 20px var(--shadow-light);
 }
 
+/* Flex container for header content with even distribution */
 .header-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1280px;
-    margin: 0 auto;
+    justify-content: space-between;    /* Space items evenly */
+    align-items: center;               /* Vertically center items */
+    max-width: 1280px;                 /* Limit width for larger screens */
+    margin: 0 auto;                    /* Center container */
 }
 
+/* Left section of header for logo */
 .header-left {
     display: flex;
-    align-items: center;
+    align-items: center;               /* Center logo vertically */
 }
 
+/* Style logo link with spacing and hover effect containment */
 .logo-link {
-    margin-right: 40px;
+    margin-right: 40px;                /* Space between logo and nav */
     display: flex;
-    align-items: center;
+    align-items: center;               /* Align logo elements */
     position: relative;
-    overflow: hidden;
+    overflow: hidden;                  /* Contain hover effects */
 }
 
+/* Style logo image with animated scaling */
 .header-logo {
     width: 35px;
     height: auto;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    margin-right: 10px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce effect */
+    margin-right: 10px;                /* Space between logo and text */
 }
 
+/* Add playful hover effect to logo image */
 .logo-link:hover .header-logo {
-    transform: scale(1.15) rotate(5deg);
+    transform: scale(1.15) rotate(5deg); /* Scale up and rotate slightly */
 }
 
+/* Style logo text with bold typography */
 .logo-text {
+    font-family: var(--font-primary);
     font-weight: 700;
     font-size: 1.4rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px;             /* Slight spacing for readability */
     color: var(--secondary-color);
 }
 
+/* Highlight accent text with primary color */
 .accent-text {
     color: var(--primary-color);
 }
 
+/* Main navigation layout */
 .main-nav {
     display: flex;
-    align-items: center;
+    align-items: center;               /* Center nav items vertically */
 }
 
+/* Navigation list with spacing between items */
 .nav-list {
     display: flex;
-    gap: 30px;
+    gap: 30px;                         /* Space between nav items */
 }
 
+/* Style individual nav links with animated underline effect */
 .nav-link {
+    font-family: var(--font-secondary);
     font-weight: 500;
     position: relative;
     padding: 8px 0;
     display: inline-block;
-    overflow: hidden;
+    overflow: hidden;                  /* Contain pseudo-element */
 }
 
+/* Smooth text movement on hover */
 .nav-link span {
     position: relative;
     display: inline-block;
     transition: transform var(--transition-normal);
 }
 
+/* Underline effect using pseudo-element */
 .nav-link::before {
     content: '';
     position: absolute;
@@ -132,28 +162,32 @@ header:hover {
     width: 100%;
     height: 2px;
     background-color: var(--primary-color);
-    transform: scaleX(0);
+    transform: scaleX(0);              /* Hidden by default */
     transform-origin: right;
-    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); /* Smooth scaling */
 }
 
+/* Show underline on hover */
 .nav-link:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
+/* Lift text slightly on hover */
 .nav-link:hover span {
     transform: translateY(-3px);
 }
 
+/* Right section of header for buttons and search */
 .header-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 20px;                         /* Space between items */
 }
 
+/* Mobile menu toggle, hidden by default */
 .mobile-menu-toggle {
-    display: none; /* Hidden by default, shown on smaller screens */
+    display: none;                     /* Visible only on smaller screens */
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -162,12 +196,15 @@ header:hover {
     transition: color var(--transition-normal);
 }
 
+/* Change toggle color on hover */
 .mobile-menu-toggle:hover {
     color: var(--primary-color);
 }
 
 /* Button Styles */
-.contact-button {
+/* Base styles for buttons with animated background */
+.contact-button,
+.cta-button {
     position: relative;
     padding: 10px 24px;
     border-radius: 6px;
@@ -180,14 +217,30 @@ header:hover {
     overflow: hidden;
     z-index: 1;
     display: inline-block;
+    font-family: var(--font-secondary);
+    transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
+/* Specific styles for CTA button */
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+
+/* Hover effect for CTA button */
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* Ensure contact button text stays above background animation */
 .contact-button span {
     position: relative;
     z-index: 2;
     transition: color var(--transition-normal);
 }
 
+/* Animated background layer for contact button hover */
 .button-background {
     position: absolute;
     top: 0;
@@ -195,19 +248,55 @@ header:hover {
     width: 100%;
     height: 100%;
     background-color: var(--primary-color);
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(100%);       /* Hidden below button */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce effect */
     z-index: 1;
 }
 
+/* Slide background up on hover */
 .contact-button:hover .button-background {
     transform: translateY(0);
 }
 
+/* Change text color on hover */
 .contact-button:hover span {
     color: white;
 }
 
+/* Search Box Styles */
+/* Style search box with collapsible animation */
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 40px;                       /* Collapsed width */
+    height: 40px;
+    overflow: hidden;                  /* Hide input initially */
+    transition: width 0.4s ease;       /* Smooth width transition */
+    border-radius: 50%;                /* Circular when collapsed */
+}
+
+/* Expand search box when active */
+.search-box.active {
+    width: 200px;                      /* Expanded width */
+    border-radius: 25px;
+    border: 1px solid var(--text-medium); /* Add border when active */
+}
+
+/* Style search input field */
+.search-input {
+    flex: 1;                           /* Fill available space */
+    border: none;
+    padding: 8px 10px;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-family: var(--font-secondary);
+    width: 100%;                       /* Ensure full width */
+}
+
+/* Style search icon button with circular hover effect */
 .search-icon {
     background: none;
     border: none;
@@ -224,8 +313,10 @@ header:hover {
     height: 40px;
     position: relative;
     overflow: hidden;
+    z-index: 2;                        /* Ensure icon is above background */
 }
 
+/* Circular background effect on hover */
 .search-icon::before {
     content: '';
     position: absolute;
@@ -233,137 +324,502 @@ header:hover {
     height: 100%;
     background-color: rgba(243, 156, 18, 0.1);
     border-radius: 50%;
-    transform: scale(0);
+    transform: scale(0);               /* Hidden by default */
     transition: transform 0.3s ease;
+    z-index: 1;
 }
 
+/* Change icon color and show background on hover */
 .search-icon:hover {
     color: var(--primary-color);
 }
 
+/* Expand background circle on hover */
 .search-icon:hover::before {
     transform: scale(1);
 }
 
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Services Menu */
-.services-menu {
-    background-color: var(--bg-light);
-    padding: 20px 0;
+/* Hero Section */
+/* Style hero section with centered content */
+.hero-section {
+    background-color: var(--bg-white);
+    padding: 60px 0;
     text-align: center;
-    margin-bottom: 40px;
 }
 
-.services-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+/* Style hero title with bold typography */
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-family: var(--font-primary);
 }
 
-.services-menu ul li {
-    display: inline;
-}
-
-.services-menu ul li a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 10px 20px;
-    border: 2px solid var(--primary-color);
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.services-menu ul li a:hover {
-    background-color: var(--primary-color);
-    color: var(--bg-light);
+/* Style hero subtitle with readable text */
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-medium);
+    margin-bottom: 2rem;
+    font-family: var(--font-secondary);
 }
 
 /* Section Styles */
-.application-development,
-.mobile-application-development,
-.cloud-services,
-.analytical-services,
-.iot,
-.training {
+/* Consistent padding for main sections */
+.services-section,
+.specializations-section,
+.testimonials-section,
+.cta-section {
+    padding: 60px 0;
+}
+
+/* Flex layout for services section with wrapping */
+.services-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Style section titles consistently */
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--secondary-color);
+    font-family: var(--font-primary);
+}
+
+/* Swiper Styles */
+/* Style Swiper container with padding for navigation */
+.swiper-container {
+    width: 100%;
+    padding-top: 20px;                 /* Space for arrows */
+    padding-bottom: 40px;              /* Space for pagination */
+    overflow: hidden;                  /* Contain slides */
+}
+
+/* Ensure slides adapt to content height */
+.swiper-slide {
+    height: auto;                      /* Height based on content */
+    display: flex;                     /* Enable flexbox layout */
+}
+
+/* Placeholder class for autoplay transitions */
+.swiper-container-autoplay {
+    transition: transform 0.3s ease;
+}
+
+/* Hide Swiper pagination by default */
+.swiper-pagination {
+    display: none;
+}
+
+/* Service Card Styles */
+/* Style service cards with flex layout and hover effects */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    background-color: var(--bg-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lift card on hover with enhanced shadow */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+/* Style service icon with scaling animation */
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Scale icon on hover */
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+/* Style service title */
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--secondary-color);
+    font-family: var(--font-primary);
+}
+
+/* Style service description with flexible growth */
+.service-description {
+    flex: 1;                           /* Grow to fill space */
+    margin-bottom: 1rem;
+    color: var(--text-medium);
+    font-family: var(--font-secondary);
+}
+
+/* Style service link with button-like appearance */
+.service-link {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    font-family: var(--font-secondary);
+    margin-top: auto;                  /* Push to bottom */
+}
+
+/* Change link appearance on hover */
+.service-link:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+
+/* Swiper Pagination and Navigation Styles */
+/* Space pagination below slides */
+.swiper-pagination {
+    margin-top: 40px;
+}
+
+/* Style pagination bullets */
+.swiper-pagination-bullet {
+    background-color: var(--text-medium);
+    opacity: 0.6;
+    transition: opacity var(--transition-normal);
+}
+
+/* Highlight active bullet */
+.swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+/* Style Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color);
+    transition: color var(--transition-normal);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
-    background-color: var(--bg-light);
 }
 
-.application-development .content,
-.mobile-application-development .content,
-.cloud-services .content,
-.analytical-services .content,
-.iot .content,
-.training .content {
+/* Position navigation arrows */
+.swiper-button-prev { left: 5px; }
+.swiper-button-next { right: 5px; }
+
+/* Enhance arrow visibility */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Equal Height Container */
+/* Ensure consistent card heights in Swiper */
+.equal-height-container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Flex layout for equal height slides */
+.equal-height-container .swiper-slide {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
 }
 
-.application-development .text-content,
-.mobile-application-development .text-content,
-.cloud-services .text-content,
-.analytical-services .text-content,
-.iot .text-content,
-.training .text-content {
-    flex: 1;
-    padding-right: 20px;
+/* Specializations Section */
+/* Flex layout for specializations with wrapping */
+.specializations-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-.application-development .text-content h1,
-.mobile-application-development .text-content h1,
-.cloud-services .text-content h1,
-.analytical-services .text-content h1,
-.iot .text-content h1,
-.training .text-content h1 {
+/* Style specialization cards with hover effects */
+.specialization-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    background-color: var(--bg-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto;                      /* Height based on content */
+}
+
+/* Lift card on hover */
+.specialization-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+/* Style specialization icon with animation */
+.specialization-icon {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Scale icon on hover */
+.specialization-card:hover .specialization-icon {
+    transform: scale(1.1);
+}
+
+/* Style specialization title */
+.specialization-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--secondary-color);
+    font-family: var(--font-primary);
+}
+
+/* Style specialization description */
+.specialization-description {
+    flex: 1;                           /* Grow to fill space */
+    margin-bottom: 1rem;
+    color: var(--text-medium);
+    font-family: var(--font-secondary);
+}
+
+/* Style specialization link */
+.specialization-link {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    font-family: var(--font-secondary);
+    margin-top: auto;                  /* Push to bottom */
+}
+
+/* Change link appearance on hover */
+.specialization-link:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+
+/* Button Container for Hero Section */
+/* Flex layout for side-by-side buttons */
+.button-container {
+    display: flex;
+    justify-content: center;           /* Center buttons */
+    gap: 20px;                         /* Space between buttons */
+    margin-top: 1rem;                  /* Space below subtitle */
+}
+
+/* Mobile Responsiveness */
+/* Adjustments for screens up to 768px */
+@media (max-width: 768px) {
+    /* Stack buttons vertically on mobile */
+    .button-container {
+        flex-direction: column;
+    }
+
+    /* Adjust Swiper padding for smaller screens */
+    .swiper-container {
+        padding: 0 35px;
+    }
+
+    /* Stack header content vertically */
+    .header-container {
+        flex-direction: column;
+    }
+}
+
+/* Testimonials */
+/* Style testimonial cards with centered content */
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    background-color: var(--bg-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto;                      /* Height based on content */
+}
+
+/* Style testimonial text with italicized formatting */
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: var(--text-medium);
+    font-family: var(--font-secondary);
+}
+
+/* Style testimonial author */
+.testimonial-author {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-family: var(--font-primary);
+}
+
+/* Call to Action (CTA) Section */
+/* Style CTA section with centered content */
+.cta-section {
+    background-color: var(--bg-white);
+    color: var(--secondary-color);     /* Contrast with background */
+    text-align: center;
+}
+
+/* Style CTA title */
+.cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+}
+
+/* Style CTA text */
+.cta-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-secondary);
+}
+
+/* Style CTA button with hover effect */
+.cta-button {
+    background-color: var(--primary-color); /* Default yellow background */
+    color: var(--bg-white);
+}
+
+/* Invert colors on hover */
+.cta-button:hover {
+    background-color: var(--bg-white);
     color: var(--primary-color);
 }
 
-.application-development .text-content p,
-.mobile-application-development .text-content p,
-.cloud-services .text-content p,
-.analytical-services .text-content p,
-.iot .text-content p,
-.training .text-content p {
-    font-size: 1.2rem;
-    color: var(--text-dark);
+/* Footer Styles */
+/* Style footer with dark background and padding */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--bg-white);
+    padding: 40px 0;
+    font-size: 0.9rem;
 }
 
-.application-development .image-content,
-.mobile-application-development .image-content,
-.cloud-services .image-content,
-.analytical-services .image-content,
-.iot .image-content,
-.training .image-content {
+/* Flex layout for footer links with wrapping */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    /* Distribute columns */
+    gap: 30px;                         /* Consistent spacing */
+}
+
+/* Style footer columns */
+.footer-column {
     flex: 1;
-    text-align: right;
+    min-width: 200px;                  /* Minimum width for readability */
 }
 
-.application-development .image-content img,
-.mobile-application-development .image-content img,
-.cloud-services .image-content img,
-.analytical-services .image-content img,
-.iot .image-content img,
-.training .image-content img {
-    max-width: 100%;
-    height: auto;
+/* Style footer headings */
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+}
+
+/* Clean list styling in footer */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Space list items */
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Style footer links */
+.footer-column a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-secondary);
+}
+
+/* Brighten and underline links on hover */
+.footer-column a:hover {
+    color: var(--bg-white);
+    text-decoration: underline;
+}
+
+/* Layout social icons */
+.social-icons {
+    display: flex;
+    gap: 15px;                         /* Space between icons */
+}
+
+/* Style social icons with hover effect */
+.social-icons a {
+    color: var(--text-light);
+    font-size: 1.4rem;
+    transition: color var(--transition-normal);
+}
+
+/* Brighten icons on hover */
+.social-icons a:hover {
+    color: var(--bg-white);
+}
+
+/* Style footer bottom with separator and flex layout */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;    /* Distribute content */
+    align-items: center;               /* Vertically center items */
+}
+
+/* Layout legal links */
+.legal-links {
+    display: flex;
+    gap: 15px;                         /* Space between links */
+}
+
+/* Style legal links with hover effect */
+.legal-links a {
+    color: var(--text-light);
+    transition: color var(--transition-normal);
+}
+
+/* Brighten legal links on hover */
+.legal-links a:hover {
+    color: var(--bg-white);
 }

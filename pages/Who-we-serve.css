@@ -1,36 +1,852 @@
-/* Page specific styles */
+/* style.css (Main Stylesheet) */
+
+/* Define CSS custom properties for consistent theming and easy updates */
+:root {
+  --primary-color: #f39c12;           /* Primary brand color for accents */
+  --secondary-color: #2c3e50;         /* Secondary color for text and contrast */
+  --bg-light: #f8f9fa;               /* Light background for sections */
+  --bg-white: #fff;                  /* Pure white for clean backgrounds */
+  --text-dark: #333;                 /* Dark text for readability */
+  --text-medium: #555;               /* Medium gray for secondary text */
+  --shadow-light: rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+  --border-color: #ddd;              /* Light border color for separation */
+  --font-primary: 'Open Sans', sans-serif; /* Primary font for general use */
+  --font-secondary: 'Roboto', sans-serif; /* Secondary font for headings */
+  --primary-color-rgb: 243, 156, 18; /* RGB equivalent of #f39c12 for opacity */
+  --transition-normal: 0.4s ease;    /* Standard transition for smooth effects */
+}
+
+/* Set base styles for body */
 body {
-    background-color: var(--bg-light);
+  font-family: var(--font-primary);   /* Default font */
+  background-color: var(--bg-light);  /* Light page background */
+  color: var(--text-dark);            /* Dark text for contrast */
+  line-height: 1.6;                   /* Improved readability */
+  margin: 0;                          /* Remove default margin */
 }
 
-main {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
+/* Style headings with consistent typography */
 h1, h2, h3, h4, h5, h6 {
-    color: var(--secondary-color);
+  color: var(--secondary-color);      /* Dark blue for headings */
+  font-family: var(--font-secondary); /* Use secondary font */
+  font-weight: 700;                   /* Bold headings */
+  line-height: 1.2;                   /* Tight line spacing for headings */
 }
 
+/* Style paragraphs with medium text color */
 p {
-    color: var(--text-medium);
-    line-height: 1.6;
-    margin-bottom: 20px;
+  color: var(--text-medium);
+  margin-bottom: 1em;                 /* Consistent spacing below paragraphs */
 }
 
-/* Example section styles */
+/* --- Header Styles --- */
+/* Style header with sticky positioning and shadow */
+header {
+  background-color: var(--bg-white);
+  padding: 15px 20px;                 /* Consistent padding */
+  border-bottom: 1px solid rgba(221, 221, 221, 0.5); /* Subtle border */
+  box-shadow: 0 2px 12px var(--shadow-light); /* Light shadow for depth */
+  position: sticky;                   /* Sticks to top on scroll */
+  top: 0;
+  z-index: 1000;                      /* High z-index to stay above content */
+  transition: box-shadow 0.4s ease;   /* Smooth shadow transition on hover */
+}
+
+/* Enhance shadow on header hover */
+header:hover {
+  box-shadow: 0 4px 20px var(--shadow-light);
+}
+
+/* Flex container for header content */
+.header-container {
+  display: flex;
+  justify-content: space-between;     /* Distribute items evenly */
+  align-items: center;                /* Center vertically */
+  max-width: 1280px;                  /* Limit width for larger screens */
+  margin: 0 auto;                     /* Center container */
+}
+
+/* Align logo elements in header-left */
+.header-left {
+  display: flex;
+  align-items: center;                /* Center logo vertically */
+}
+
+/* Style logo link with hover effect containment */
+.logo-link {
+  margin-right: 40px;                 /* Space from nav */
+  display: flex;
+  align-items: center;                /* Align logo and text */
+  position: relative;
+  overflow: hidden;                   /* Contain hover effects */
+  text-decoration: none;              /* Remove underline from logo link */
+}
+
+/* Style logo image with playful hover animation */
+.header-logo {
+  width: 35px;
+  height: auto;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce effect */
+  margin-right: 10px;                 /* Space between logo and text */
+}
+
+/* Animate logo on hover */
+.logo-link:hover .header-logo {
+  transform: scale(1.15) rotate(5deg); /* Scale and rotate */
+}
+
+/* Style logo text with bold typography */
+.logo-text {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;              /* Slight spacing for readability */
+  color: var(--secondary-color);
+}
+
+/* Flex layout for main navigation */
+.main-nav {
+  display: flex;
+  align-items: center;                /* Center nav items */
+}
+
+/* Style navigation list with spacing */
+.nav-list {
+  display: flex;
+  gap: 30px;                          /* Space between items */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style nav links with animated underline */
+.nav-link {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  position: relative;
+  padding: 8px 0;
+  display: inline-block;
+  overflow: hidden;                   /* Contain pseudo-element */
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+/* Smooth text movement on hover */
+.nav-link span {
+  position: relative;
+  display: inline-block;
+  transition: transform var(--transition-normal);
+}
+
+/* Underline effect using pseudo-element */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);               /* Hidden by default */
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); /* Smooth scaling */
+}
+
+/* Show underline on hover */
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Lift text on hover */
+.nav-link:hover span {
+  transform: translateY(-3px);
+}
+
+/* Flex layout for header-right with buttons and search */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;                          /* Space between items */
+}
+
+/* Mobile menu toggle, hidden by default */
+.mobile-menu-toggle {
+  display: none;                      /* Visible only on mobile */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: color var(--transition-normal);
+}
+
+/* Change toggle color on hover */
+.mobile-menu-toggle:hover {
+  color: var(--primary-color);
+}
+
+/* --- Button Styles --- */
+/* Style contact button with animated background */
+.contact-button {
+  position: relative;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: transparent;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border: 2px solid var(--primary-color);
+  overflow: hidden;
+  z-index: 1;
+  display: inline-block;
+  font-family: var(--font-secondary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  text-decoration: none;              /* Remove underlines */
+}
+
+/* Ensure button text stays above animation */
+.contact-button span {
+  position: relative;
+  z-index: 2;
+  transition: color var(--transition-normal);
+}
+
+/* Animated background layer for hover */
+.button-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  transform: translateY(100%);        /* Hidden below button */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce effect */
+  z-index: 1;
+}
+
+/* Slide background up on hover */
+.contact-button:hover .button-background {
+  transform: translateY(0);
+}
+
+/* Change text color on hover */
+.contact-button:hover span {
+  color: white;
+}
+
+/* --- Search Box Styles --- */
+/* Style search box with collapsible animation */
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 40px;                        /* Collapsed width */
+  height: 40px;
+  overflow: hidden;                   /* Hide input initially */
+  transition: width 0.4s ease;        /* Smooth width transition */
+  border-radius: 50%;                 /* Circular when collapsed */
+}
+
+/* Expand search box when active */
+.search-box.active {
+  width: 200px;                       /* Expanded width */
+  border-radius: 25px;
+  border: 1px solid var(--text-medium); /* Border when active */
+}
+
+/* Style search input field */
+.search-input {
+  flex: 1;                            /* Fill available space */
+  border: none;
+  padding: 8px 10px;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-family: var(--font-secondary);
+  width: 100%;                        /* Ensure full width */
+}
+
+/* Style search icon with circular hover effect */
+.search-icon {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;                         /* Icon above background */
+}
+
+/* Circular background effect on hover */
+.search-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--primary-color-rgb), 0.1); /* Subtle primary color overlay */
+  border-radius: 50%;
+  transform: scale(0);                /* Hidden by default */
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Change icon color and show background on hover */
+.search-icon:hover {
+  color: var(--primary-color);
+}
+
+/* Expand background circle on hover */
+.search-icon:hover::before {
+  transform: scale(1);
+}
+
+/* --- Footer Styles --- */
+/* Style footer with dark background and centered text */
+footer {
+  background-color: var(--secondary-color);
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid var(--border-color); /* Subtle separation */
+  box-shadow: 0 -2px 12px var(--shadow-light); /* Shadow for depth */
+  margin-top: 40px;                   /* Space above footer */
+}
+
+/* Style footer text */
+footer p {
+  margin: 0;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: var(--font-secondary);
+}
+
+/* --- Who-we-serve.css (Page-specific Styles) --- */
+
+/* Style main content area with centered max-width */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;                     /* Center content */
+}
+
+/* --- Hero Section --- */
+/* Flex layout for hero section with shadow and rounded corners */
+.who-we-serve-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;     /* Distribute content */
+  padding: 4rem 2rem;
+  background-color: var(--bg-white);
+  box-shadow: 0 4px 20px var(--shadow-light); /* Subtle shadow */
+  margin-bottom: 0;
+  flex-wrap: wrap;                    /* Allow wrapping on smaller screens */
+  border-radius: 10px;
+  overflow: hidden;                   /* Contain content */
+}
+
+/* Style hero content area */
+.who-we-serve-content {
+  flex: 0 0 45%;                      /* Take up 45% of width */
+  padding: 2rem;
+  box-sizing: border-box;             /* Include padding in width */
+}
+
+/* Large hero title */
+.who-we-serve-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Readable hero paragraph */
+.who-we-serve-content p {
+  font-size: 1.2rem;
+}
+
+/* Style hero image container */
+.who-we-serve-image {
+  flex: 0 0 50%;                      /* Take up 50% of width */
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Style hero image with shadow */
+.who-we-serve-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px var(--shadow-light);
+}
+
+/* --- Page Navigation (Sticky) --- */
+/* Style sticky navigation with gradient background */
+.page-nav {
+  background: linear-gradient(to bottom, #f8f9fa, #f0f2f5); /* Subtle gradient */
+  border-bottom: 1px solid var(--border-color);
+  padding: 0;
+  position: sticky;                   /* Sticks below header */
+  top: 0;
+  z-index: 50;                        /* Above main content */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Light shadow */
+}
+
+/* Center navigation container */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Flex layout for navigation list */
+.page-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;            /* Center links */
+  height: 60px;
+  background-color: var(--secondary-color); /* Dark background */
+}
+
+/* Style nav list items */
+.page-nav-list li {
+  margin: 0;
+  position: relative;
+}
+
+/* Style page navigation links with hover effect */
+.page-nav-link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: all 0.25s ease;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); /* Subtle text shadow */
+}
+
+/* Underline effect for nav links */
+.page-nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: all 0.25s ease;
+  transform: translateX(-50%);
+}
+
+/* Expand underline on hover or active state */
+.page-nav-link:hover,
+.page-nav-link.active {
+  color: var(--primary-color);
+}
+
+/* Animate underline width */
+.page-nav-link:hover:after,
+.page-nav-link.active:after {
+  width: 70%;
+}
+
+/* Bold active link */
+.page-nav-link.active {
+  font-weight: 700;
+}
+
+/* Add borders between nav items */
+.page-nav-list li + li {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* --- Section Styles --- */
+/* Consistent padding for sections */
 .section {
-    margin-bottom: 60px;
+  padding: 4rem 0;
+  margin-bottom: 0;
 }
 
+/* Center section content */
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Style section headings */
 .section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
+/* Justify section paragraphs */
 .section p {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
+  text-align: justify;
 }
 
-/* Add any additional styles specific to the "Who We Serve" page here */
+/* Style overview section with light background */
+.section-overview {
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  padding: 4rem 2rem;
+}
+
+/* --- Container Grid Styles --- */
+/* Responsive grid layout for containers */
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptive columns */
+  gap: 30px;                          /* Space between items */
+  margin-top: 40px;                   /* Space above grid */
+}
+
+/* Style individual containers with hover effects */
+.container {
+  background-color: var(--bg-white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Light shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;     /* Distribute content */
+  border-top: 4px solid var(--primary-color); /* Top accent */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Lift container on hover with enhanced shadow */
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle gradient overlay on hover */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Show overlay on hover */
+.container:hover::before {
+  opacity: 1;
+}
+
+/* Style container heading with underline effect */
+.container h3 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  position: relative;
+  padding-bottom: 12px;
+  z-index: 2;                         /* Above overlay */
+}
+
+/* Underline animation for container heading */
+.container h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+/* Extend underline on hover */
+.container:hover h3::after {
+  width: 100px;
+}
+
+/* Style container paragraph */
+.container p {
+  z-index: 2;
+  flex-grow: 1;                       /* Fill available space */
+  margin-bottom: 20px;
+  color: var(--text-medium);
+  line-height: 1.7;                   /* Improved readability */
+}
+
+/* Style container icon with scaling animation */
+.container-icon {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Scale icon on hover */
+.container:hover .container-icon {
+  transform: scale(1.2);
+}
+
+/* --- Section Header --- */
+/* Center section header content */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Style section header title */
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Add gradient underline to section header */
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/* Style section header paragraph */
+.section-header p {
+  color: var(--text-medium);
+  max-width: 800px;
+  margin: 0 auto;                     /* Center text */
+}
+
+/* --- Learn More Button --- */
+/* Style learn-more button with hover animation */
+.learn-more-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(var(--primary-color-rgb), 0.3); /* Subtle shadow */
+  border: none;
+}
+
+/* Animated background overlay for button */
+.learn-more-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+/* Lift button and enhance shadow on hover */
+.learn-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.4);
+  color: var(--bg-white);
+}
+
+/* Expand background overlay on hover */
+.learn-more-btn:hover::before {
+  width: 100%;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Larger Breakpoint (up to 992px) */
+@media (max-width: 992px) {
+  /* Reduce padding in hero section */
+  .who-we-serve-hero {
+      padding: 3rem 1rem;
+  }
+
+  /* Adjust padding for hero content */
+  .who-we-serve-content {
+      padding: 1rem;
+  }
+
+  /* Reduce hero title size */
+  .who-we-serve-content h1 {
+      font-size: 2.5rem;
+  }
+
+  /* Adjust padding for hero image */
+  .who-we-serve-image {
+      padding: 1rem;
+  }
+
+  /* Reduce section padding */
+  .section {
+      padding: 3rem 0;
+  }
+
+  /* Reduce section heading size */
+  .section h2 {
+      font-size: 2rem;
+  }
+
+  /* Adjust grid column width */
+  .container-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  /* Reduce container padding */
+  .container {
+      padding: 25px;
+  }
+
+  /* Reduce section header title size */
+  .section-header h2 {
+      font-size: 2rem;
+  }
+}
+
+/* Mobile Breakpoint (up to 768px) */
+@media (max-width: 768px) {
+  /* Stack hero content vertically */
+  .who-we-serve-hero {
+      flex-direction: column;
+      padding: 2rem 1rem;
+  }
+
+  /* Full width for hero content and image */
+  .who-we-serve-content,
+  .who-we-serve-image {
+      flex: 0 0 100%;
+      padding: 1rem;
+  }
+
+  /* Center hero title on mobile */
+  .who-we-serve-content h1 {
+      text-align: center;
+  }
+
+  /* Adjust page navigation for mobile */
+  .page-nav-list {
+      justify-content: space-around;
+      height: auto;                   /* Allow height to adjust */
+      flex-wrap: wrap;                /* Wrap items if needed */
+      padding: 0.5rem 0;              /* Add padding */
+  }
+
+  /* Adjust padding for nav links */
+  .page-nav-link {
+      padding: 0.75rem 1rem;
+      height: auto;
+  }
+
+  /* Add spacing between nav items */
+  .page-nav-list li {
+      margin: 0.25rem 0;
+  }
+
+  /* Reduce padding in overview section */
+  .section-overview {
+      padding: 3rem 1rem;
+  }
+
+  /* Reduce container padding */
+  .container {
+      padding: 1.5rem;
+  }
+
+  /* Reduce section header title size */
+  .section-header h2 {
+      font-size: 1.8rem;
+  }
+
+  /* Mobile menu styling */
+  .nav-list {
+      display: none;                  /* Hidden by default */
+      flex-direction: column;         /* Stack vertically */
+      width: 100%;                    /* Full width */
+      background-color: var(--bg-white); /* White background */
+      position: absolute;             /* Position below header */
+      top: 60px;                      /* Below header height */
+      left: 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+      z-index: 100;                   /* Above other content */
+  }
+
+  /* Show nav list when active */
+  .nav-list.active {
+      display: flex;
+  }
+
+  /* Style mobile nav items */
+  .nav-list li {
+      text-align: center;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-color); /* Separator */
+  }
+
+  /* Remove border from last item */
+  .nav-list li:last-child {
+      border-bottom: none;
+  }
+
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+      display: block;
+  }
+
+  /* Reduce footer padding */
+  footer {
+      padding: 15px 0;
+  }
+
+  /* Reduce footer text size */
+  footer p {
+      font-size: 0.8rem;
+  }
+
+  /* Remove borders between nav items in mobile view */
+  .page-nav-list li + li {
+      border-left: none;
+  }
+}

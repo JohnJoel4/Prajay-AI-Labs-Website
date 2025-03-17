@@ -1,113 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Define character encoding for proper text rendering -->
     <meta charset="UTF-8">
+    <!-- Ensure responsive design across devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set page title for SEO and browser tab -->
     <title>Who We Serve - Prajay AI Labs</title>
+
+    <!-- Include Normalize.css to reset browser styles consistently -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link main stylesheet for general styling -->
     <link rel="stylesheet" href="../style.css">
+    <!-- Link page-specific stylesheet for "Who We Serve" -->
     <link rel="stylesheet" href="Who-we-serve.css">
     <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Include AOS (Animate On Scroll) library -->
+    <!-- Include AOS for scroll animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load Open Sans and Roboto fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header section with navigation -->
     <header>
         <div class="header-container">
+            <!-- Left section with logo linking to homepage -->
             <div class="header-left">
                 <a href="../index.html" class="logo-link">
                     <img src="../assests/prajay_AI_Labs_logo.png" alt="Prajay Logo" class="header-logo">
                     <span class="logo-text">Prajay AI Labs</span>
                 </a>
-                <nav class="main-nav">
-                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="nav-list">
-                        <li><a href="what-we-do.html" class="nav-link"><span>What we do</span></a></li>
-                        <li><a href="who-we-serve.html" class="nav-link"><span>Who we serve</span></a></li>
-                        <li><a href="Why-Prajay-AI-Labs.html" class="nav-link"><span>Why Prajay AI Labs</span></a></li>
-                        <li><a href="perspectives.html" class="nav-link"><span>Perspectives</span></a></li>
-                        <li><a href="government.html" class="nav-link"><span>Government</span></a></li>
-                    </ul>
-                </nav>
             </div>
+            <!-- Main navigation with mobile toggle -->
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i> <!-- Hamburger icon for mobile -->
+                </button>
+                <ul class="nav-list">
+                    <li><a href="what-we-do.html" class="nav-link"><span>What we do</span></a></li>
+                    <li><a href="who-we-serve.html" class="nav-link"><span>Who we serve</span></a></li>
+                    <li><a href="Why-Prajay-AI-Labs.html" class="nav-link"><span>Why Prajay AI Labs</span></a></li>
+                    <li><a href="perspectives.html" class="nav-link"><span>Perspectives</span></a></li>
+                    <li><a href="government.html" class="nav-link"><span>Government</span></a></li>
+                </ul>
+            </nav>
+            <!-- Right section with contact button and search -->
             <div class="header-right">
                 <a href="contact-us.html" class="contact-button">
                     <span>Contact Us</span>
-                    <div class="button-background"></div>
+                    <div class="button-background"></div> <!-- Animated background for hover effect -->
                 </a>
-                <button class="search-icon" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
+                <!-- Search box, hidden by default -->
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." class="search-input">
+                    <button class="search-icon" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- Main content wrapper -->
     <main>
-        <!-- Page specific content goes here -->
-    </main>
+        <!-- Hero section with introductory content and image -->
+        <section class="who-we-serve-hero">
+            <div class="who-we-serve-content" data-aos="fade-right">
+                <h1>Who We Serve</h1>
+                <p>We are dedicated to earning our clients' trust by actively contributing to their success and transformation. Our proven track record of trust includes partnerships with organizations in commercial, non-profit, state and federal government sectors.</p>
+            </div>
+            <div class="who-we-serve-image" aria-label="Who We Serve visual">
+                <img src="../assests/who_we_serve.png" alt="Who We Serve">
+            </div>
+        </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Digitalization</a></li>
-                        <li><a href="#">Business Transformation</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">Operations Management</a></li>
-                    </ul>
+        <!-- Sticky navigation for page sections -->
+        <nav class="page-nav" data-aos="fade-down">
+            <div class="nav-container">
+                <ul class="page-nav-list">
+                    <li><a href="#commercial" class="page-nav-link">Commercial</a></li>
+                    <li><a href="#non-profit" class="page-nav-link">Non-Profit</a></li>
+                    <li><a href="#government" class="page-nav-link">Government</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Overview Section -->
+        <section id="overview" class="section section-overview" data-aos="fade-up">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2>Overview</h2>
+                    <p>Organizations that are committed to staying not just relevant but ahead of business trends require vendor-partners that can align themselves well and invest in their journeys. Prajay AI Labs brings more than 20 years of technology solutions expertise to every partnership. Our clients trust us to help them capitalize on change and achieve their goals through optimal solutions that transform their business, technology, and workforce.<br><br>From large enterprises to innovative non-profits and forward-thinking public institutions, we've helped enable transformation and success for organizations across a wide range of sectors.</p>
                 </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+            </div>
+        </section>
+
+        <!-- Commercial Section -->
+        <section id="commercial" class="section section-commercial" data-aos="fade-up">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2>Commercial</h2>
+                    <p>We proudly serve a diverse range of commercial clients across multiple industries, delivering tailored solutions to meet their unique needs.</p>
                 </div>
-                <div class="footer-column">
-                    <h4>Connect</h4>
-                    <div class="social-icons">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <!-- Grid layout for commercial industries -->
+                <div class="container-grid">
+                    <div class="container">
+                        <i class="fas fa-shopping-basket container-icon"></i>
+                        <h3>Consumer Packaged Goods & Retail</h3>
+                        <p>Our CPG&R clients include a well-known maker of Breakfast Cereals, a reputed provider of Household Goods, and a reputed Sports Apparel brand.</p>
+                    </div>
+                    <div class="container">
+                        <i class="fas fa-chart-line container-icon"></i>
+                        <h3>Banking and Financial Services</h3>
+                        <p>Among our Financial Services clients, we count a dynamic multi-charter Regional Bank, a large Property and Casualty Insurer, a reputed Credit Card brand, and a large Fixed Assets Management entity.</p>
+                    </div>
+                    <div class="container">
+                        <i class="fas fa-store container-icon"></i>
+                        <h3>Franchising</h3>
+                        <p>A large multi-brand Franchise organization focused on home improvement including furnishings, cabinetry, flooring, garage improvement, kitchen improvement, water/fire damage restoration, etc. is a valued client of ours.</p>
+                    </div>
+                    <div class="container">
+                        <i class="fas fa-heartbeat container-icon"></i>
+                        <h3>Healthcare</h3>
+                        <p>A Multinational Healthcare brand of hospital and surgical products, a renowned brand in Glucose Monitoring technologies, a Medical Devices and Healthcare company, and a Dental Technologies provider are among our Healthcare clients.</p>
+                    </div>
+                    <div class="container">
+                        <i class="fas fa-industry container-icon"></i>
+                        <h3>Manufacturing</h3>
+                        <p>A Heavy Construction Equipment manufacturer, an Engine and Truck manufacturer, a reputed manufacturer of Glassware and Ceramics, and a household name in Document Technologies are some of our clients.</p>
+                    </div>
+                    <div class="container">
+                        <i class="fas fa-briefcase container-icon"></i>
+                        <h3>Professional Services</h3>
+                        <p>Our valued Professional Services clients include a large Facilities Manager for US and allied governments, a reputed Technology Integrator Multinational, a large Standards Organization, and the Industry Leader in training and certification for auto-collision repair.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Prajay AI Labs. All rights reserved.</p>
-            <ul class="legal-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
-        </div>
+        </section>
+
+        <!-- Non-Profit Section -->
+        <section id="non-profit" class="section section-non-profit" data-aos="fade-up">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2>Non-Profit</h2>
+                    <p>We serve several Non-Profit organizations including a National Association that represents Healthcare Organizations, a National Association that promotes Legal Aid, and a National Community Organization for young women. We have invested efforts and energy in developing Analytics solutions that would add value to many such organizations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Section -->
+        <section id="government" class="section section-government" data-aos="fade-up">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2>Government</h2>
+                    <p>We proudly serve various government sectors, delivering tailored solutions to meet their unique needs.</p>
+                </div>
+                <!-- Grid layout for government sectors -->
+                <div class="container-grid">
+                    <div class="container">
+                        <i class="fas fa-flag-usa container-icon"></i>
+                        <h3>Federal Government</h3>
+                        <p>We serve the Defense and Civilian agencies of the U.S. Federal Government, applying commercial innovations to key initiatives and driving impactful solutions.</p>
+                        <a href="Government/Federal_government.html" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <div class="container">
+                        <i class="fas fa-landmark container-icon"></i>
+                        <h3>State and Local Government</h3>
+                        <p>We proudly serve Illinois as a Prime vendor and subcontractor, supporting local governments, including Chicago and Cook County, on impactful projects.</p>
+                        <a href="Government/State_and_local_government.html" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <div class="container">
+                        <i class="fas fa-graduation-cap container-icon"></i>
+                        <h3>Education</h3>
+                        <p>We support Illinois educational institutions through IPHEC2140, enabling streamlined access to our services for all 13 public higher education institutions in the state.</p>
+                        <a href="Government/Education.html" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with copyright notice -->
+    <footer>
+        <p>© 2025 Prajay AI Labs. All rights reserved.</p>
     </footer>
 
-    <!-- Include AOS JS -->
+    <!-- Include AOS.js for scroll animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Initialize AOS animation library
-        AOS.init({
-          duration: 800,
-          easing: 'ease-in-out',
-          once: true
-        });
-        
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const navList = document.querySelector('.nav-list');
 
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                navList.classList.toggle('active');
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Ensure DOM is fully loaded before running scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS with custom settings
+            AOS.init({
+                duration: 800,           // Animation duration in milliseconds
+                easing: 'ease-in-out',   // Smooth easing for animations
+                once: true,              // Animate only once on scroll
+                mirror: false            // Do not animate on scroll up
             });
-        }
-      });
+
+            // Mobile menu toggle functionality
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    navList.classList.toggle('active');
+                });
+            }
+
+            // Smooth scrolling for page navigation links with offset
+            const pageNavLinks = document.querySelectorAll('.page-nav-link');
+            pageNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const offset = 50; // Adjusted offset for sticky nav
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        if (navList.classList.contains('active')) {
+                            navList.classList.remove('active');
+                        }
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

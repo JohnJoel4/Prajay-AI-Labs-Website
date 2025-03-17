@@ -1,29 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Define character encoding for proper text rendering -->
     <meta charset="UTF-8">
+    <!-- Ensure responsive design across devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set page title for SEO and browser tab -->
     <title>What We Do - Prajay AI Labs</title>
-    <link rel="stylesheet" href="../style.css">
+
+    <!-- Include Normalize.css to reset browser styles consistently -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link main stylesheet for general styling -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link page-specific stylesheet for "What We Do" section -->
     <link rel="stylesheet" href="what-we-do.css">
     <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Include AOS (Animate On Scroll) library -->
+    <!-- Include AOS for scroll animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <script src="../script.js"></script>
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load Poppins and Roboto fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Include Swiper.js CSS for carousel functionality -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Inline styles for custom Swiper navigation and responsive adjustments -->
+    <style>
+        /* Style Swiper container with padding for navigation arrows */
+        .swiper-container {
+            position: relative;
+            padding: 0 40px; /* Space for arrows */
+            overflow: hidden; /* Prevent content overflow */
+        }
+
+        /* Position and style Swiper navigation arrows */
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            z-index: 10;
+            cursor: pointer;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Position arrows on left and right */
+        .swiper-button-prev { left: 5px; }
+        .swiper-button-next { right: 5px; }
+
+        /* Enhance arrow visibility */
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Ensure cards fit within Swiper slides */
+        .service-card,
+        .specialization-card,
+        .testimonial-card {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .swiper-container {
+                padding: 0 35px;
+            }
+        }
+
+        /* Increase space below pagination dots */
+        .swiper-pagination {
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Header section with navigation -->
     <header>
         <div class="header-container">
+            <!-- Left section with logo linking to homepage -->
             <div class="header-left">
                 <a href="../index.html" class="logo-link">
-                    <img src="../assests\prajay_AI_Labs_logo.png" alt="Prajay Logo" class="header-logo">
+                    <img src="../assests/prajay_AI_Labs_logo.png" alt="Prajay Logo" class="header-logo">
                     <span class="logo-text">Prajay AI Labs</span>
                 </a>
             </div>
+            <!-- Main navigation with mobile toggle -->
             <nav class="main-nav">
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-bars"></i> <!-- Hamburger icon -->
                 </button>
                 <ul class="nav-list">
                     <li><a href="what-we-do.html" class="nav-link"><span>What we do</span></a></li>
@@ -33,45 +109,201 @@
                     <li><a href="government.html" class="nav-link"><span>Government</span></a></li>
                 </ul>
             </nav>
+            <!-- Right section with contact button and search functionality -->
             <div class="header-right">
                 <a href="contact-us.html" class="contact-button">
                     <span>Contact Us</span>
-                    <div class="button-background"></div>
+                    <div class="button-background"></div> <!-- Animated background -->
                 </a>
-                <button class="search-icon" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
+                <!-- Search box, hidden by default -->
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." class="search-input">
+                    <button class="search-icon" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- Main content wrapper -->
     <main>
-        <!-- Main content specific to What We Do page -->
-        <!-- ...existing code... -->
+        <!-- Hero section with introductory content -->
+        <section class="hero-section container" data-aos="fade-up">
+            <div class="container">
+                <h1 class="hero-title">What We Do</h1>
+                <p class="hero-subtitle">
+                    Empowering businesses with cutting-edge AI solutions and strategic consulting. We transform challenges into opportunities.
+                </p>
+                <!-- Button container for side-by-side CTAs -->
+                <div class="button-container">
+                    <a href="#our-services" class="cta-button">Explore Our Services</a>
+                    <a href="#our-specializations" class="cta-button">Explore Specializations</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services section with Swiper carousel -->
+        <section class="services-section equal-height-container container" data-aos="fade-up" id="our-services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="swiper-container services-slider">
+                <!-- Navigation arrows -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-wrapper">
+                    <!-- Service Slide: Digitalization -->
+                    <div class="swiper-slide service-card">
+                        <div class="service-icon"><i class="fas fa-digital-tachograph"></i></div>
+                        <h3 class="service-title">Digitalization</h3>
+                        <p class="service-description">
+                            Streamline your operations with our digital transformation expertise. We help you embrace automation, cloud solutions, and data-driven insights.
+                        </p>
+                        <a href="services/Digitalization.html" class="service-link">Learn More</a>
+                    </div>
+                    <!-- Service Slide: Business Technology -->
+                    <div class="swiper-slide service-card">
+                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3 class="service-title">Business Technology Transformation</h3>
+                        <p class="service-description">
+                            Modernize your IT infrastructure and align it with your business goals. We provide strategic guidance and implementation support.
+                        </p>
+                        <a href="services/Business_Technology.html" class="service-link">Learn More</a>
+                    </div>
+                    <!-- Service Slide: Cybersecurity -->
+                    <div class="swiper-slide service-card">
+                        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="service-title">Cybersecurity Services</h3>
+                        <p class="service-description">
+                            Protect your valuable data and infrastructure from evolving cyber threats. Our comprehensive security solutions provide peace of mind.
+                        </p>
+                        <a href="services/cybersecurity.html" class="service-link">Learn More</a>
+                    </div>
+                    <!-- Service Slide: Operations -->
+                    <div class="swiper-slide service-card">
+                        <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="service-title">Operations Management</h3>
+                        <p class="service-description">
+                            Optimize your workflows and improve efficiency. We help you implement best practices and leverage technology for operational excellence.
+                        </p>
+                        <a href="services/Operations_Management.html" class="service-link">Learn More</a>
+                    </div>
+                    <!-- Service Slide: Talent Mobilization -->
+                    <div class="swiper-slide service-card">
+                        <div class="service-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="service-title">Talent Mobilization</h3>
+                        <p class="service-description">
+                            Find and onboard the right talent to drive your AI initiatives. We connect you with skilled professionals who can make a difference.
+                        </p>
+                        <a href="services/Talent_Mobilization.html" class="service-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specializations section with Swiper carousel -->
+        <section class="specializations-section equal-height-container container" data-aos="fade-up" data-aos-delay="200" id="our-specializations">
+            <h2 class="section-title">Our Specializations</h2>
+            <div class="swiper-container specializations-slider">
+                <!-- Navigation arrows -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-wrapper">
+                    <!-- Specialization Slide: Cybersecurity -->
+                    <div class="swiper-slide specialization-card">
+                        <div class="specialization-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="specialization-title">Cybersecurity</h3>
+                        <p class="specialization-description">Expertise in securing your digital assets.</p>
+                        <a href="specalizations/Cybersecurity.html" class="specialization-link">Learn More</a>
+                    </div>
+                    <!-- Specialization Slide: Data Analytics -->
+                    <div class="swiper-slide specialization-card">
+                        <div class="specialization-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="specialization-title">Data Analytics with AI/ML</h3>
+                        <p class="specialization-description">Leverage data for actionable insights.</p>
+                        <a href="specalizations/Data_Analytics.html" class="specialization-link">Learn More</a>
+                    </div>
+                    <!-- Specialization Slide: Microsoft -->
+                    <div class="swiper-slide specialization-card">
+                        <div class="specialization-icon"><i class="fab fa-microsoft"></i></div>
+                        <h3 class="specialization-title">Microsoft</h3>
+                        <p class="specialization-description">Microsoft solutions and integration.</p>
+                        <a href="specalizations/Enterprise_Architecture.html" class="specialization-link">Learn More</a>
+                    </div>
+                    <!-- Specialization Slide: Salesforce -->
+                    <div class="swiper-slide specialization-card">
+                        <div class="specialization-icon"><i class="fab fa-salesforce"></i></div>
+                        <h3 class="specialization-title">Salesforce</h3>
+                        <p class="specialization-description">Salesforce implementation and customization.</p>
+                        <a href="specalizations/Enterprise_Architecture.html" class="specialization-link">Learn More</a>
+                    </div>
+                    <!-- Specialization Slide: Enterprise Architecture -->
+                    <div class="swiper-slide specialization-card">
+                        <div class="specialization-icon"><i class="fas fa-building"></i></div>
+                        <h3 class="specialization-title">Enterprise Architecture</h3>
+                        <p class="specialization-description">Designing robust and scalable IT architectures.</p>
+                        <a href="specalizations/Enterprise_Architecture.html" class="specialization-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials section with Swiper carousel -->
+        <section class="testimonials-section container" data-aos="fade-up">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="swiper-container testimonials-slider">
+                <!-- Navigation arrows -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-wrapper">
+                    <!-- Testimonial Slide 1 -->
+                    <div class="swiper-slide testimonial-card">
+                        <p class="testimonial-text">"Prajay AI Labs helped us completely transform our digital strategy. Their expertise and guidance were invaluable."</p>
+                        <p class="testimonial-author">- John Smith, CEO, Company X</p>
+                    </div>
+                    <!-- Testimonial Slide 2 -->
+                    <div class="swiper-slide testimonial-card">
+                        <p class="testimonial-text">"The team at Prajay AI is incredibly knowledgeable and responsive. They delivered exceptional results on our cybersecurity project."</p>
+                        <p class="testimonial-author">- Jane Doe, CTO, Company Y</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-action section -->
+        <section class="cta-section container" data-aos="fade-up">
+            <h2 class="cta-title">Ready to Transform Your Business?</h2>
+            <p class="cta-text">Contact us today to discuss your needs and discover how Prajay AI Labs can help you achieve your goals.</p>
+            <a href="contact-us.html" class="cta-button">Get Started</a>
+        </section>
     </main>
 
+    <!-- Footer section with links and legal info -->
     <footer>
         <div class="footer-content">
-            <div class="footer-links">
+            <div class="footer-links container">
+                <!-- Services column -->
                 <div class="footer-column">
-                    <h4>Services</h4>
+                    <h4 class="footer-heading">Services</h4>
                     <ul>
-                        <li><a href="#">Digitalization</a></li>
-                        <li><a href="#">Business Transformation</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">Operations Management</a></li>
+                        <li><a href="services/digitalization.html">Digitalization</a></li>
+                        <li><a href="services/business-technology-transformation.html">Business Technology Transformation</a></li>
+                        <li><a href="services/cybersecurity-services.html">Cybersecurity Services</a></li>
+                        <li><a href="services/operations-management.html">Operations Management</a></li>
+                        <li><a href="services/Talent_Mobilization.html">Talent Mobilization</a></li>
                     </ul>
                 </div>
+                <!-- Company column -->
                 <div class="footer-column">
-                    <h4>Company</h4>
+                    <h4 class="footer-heading">Company</h4>
                     <ul>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
                     </ul>
                 </div>
+                <!-- Social media column -->
                 <div class="footer-column">
-                    <h4>Connect</h4>
+                    <h4 class="footer-heading">Connect</h4>
                     <div class="social-icons">
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -80,7 +312,8 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        <!-- Footer bottom with copyright and legal links -->
+        <div class="footer-bottom container">
             <p>© 2025 Prajay AI Labs. All rights reserved.</p>
             <ul class="legal-links">
                 <li><a href="#">Privacy Policy</a></li>
@@ -89,26 +322,121 @@
         </div>
     </footer>
 
-    <!-- Include AOS JS -->
+    <!-- Include Swiper.js for carousel functionality -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Include AOS.js for scroll animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- JavaScript for interactivity -->
     <script>
+        // Ensure DOM is fully loaded before running scripts
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animation library
+            // Initialize AOS with custom settings
             AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
+                duration: 800,           // Animation duration in milliseconds
+                easing: 'ease-in-out',   // Smooth easing for animations
+                once: true,              // Animate only once on scroll
+                mirror: false            // Do not animate on scroll up
             });
 
-            // Mobile menu toggle
+            // Mobile menu toggle functionality
             const menuToggle = document.querySelector('.mobile-menu-toggle');
             const navList = document.querySelector('.nav-list');
-
             if (menuToggle) {
                 menuToggle.addEventListener('click', () => {
                     navList.classList.toggle('active');
                 });
             }
+
+            // Initialize Swiper for Services carousel
+            const servicesSwiper = new Swiper('.services-slider', {
+                slidesPerView: 1,        // Default to 1 slide visible
+                spaceBetween: 20,        // Space between slides
+                loop: true,              // Enable continuous looping
+                autoplay: {
+                    delay: 3000,         // Autoplay delay in milliseconds
+                    disableOnInteraction: false, // Continue autoplay after interaction
+                    pauseOnMouseEnter: true // Pause on hover
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                breakpoints: {           // Responsive settings
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                }
+            });
+
+            // Initialize Swiper for Specializations carousel
+            const specializationsSwiper = new Swiper('.specializations-slider', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                }
+            });
+
+            // Initialize Swiper for Testimonials carousel
+            const testimonialsSwiper = new Swiper('.testimonials-slider', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            });
+
+            // Search box toggle functionality
+            const searchIcon = document.querySelector('.search-icon');
+            const searchBox = document.querySelector('.search-box');
+            const searchInput = document.querySelector('.search-input');
+            searchIcon.addEventListener('click', () => {
+                searchBox.classList.toggle('active');
+                if (searchBox.classList.contains('active')) {
+                    searchInput.focus(); // Focus input when opened
+                }
+            });
+
+            // Close search box when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!searchBox.contains(event.target) && !searchIcon.contains(event.target)) {
+                    searchBox.classList.remove('active');
+                }
+            });
+
+            // Smooth scrolling for anchor links with offset
+            const offset = 80; // Adjust for fixed header height
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
