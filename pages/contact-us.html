@@ -3,59 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Prajay AI Labs</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="contact-us.css">
-    <!-- Include Font Awesome for icons -->
+    <title>Contact Us - Synapse AI</title>
+    <link rel="stylesheet" href="../style.css">  <!-- Link to your main stylesheet -->
+    <link rel="stylesheet" href="contact-us.css"> <!-- Contact-specific styles -->
+     <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Include AOS (Animate On Scroll) library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="../script.js"></script>
 </head>
 <body>
+    <!-- Header section with navigation -->
     <header>
         <div class="header-container">
+            <!-- Logo and Brand Name -->
             <div class="header-left">
                 <a href="../index.html" class="logo-link">
-                    <img src="../assests\prajay_AI_Labs_logo.png" alt="Prajay Logo" class="header-logo">
-                    <span class="logo-text">Prajay AI Labs</span>
+                    <img src="../assests/Synapse_logo.png" alt="Synapse Logo" class="header-logo">
+                    <span class="logo-text">Synapse AI</span>
                 </a>
+            </div>
+
+            <!-- Header Right Section (Navigation, Contact and Search) -->
+            <div class="header-right">
+                <!-- Main Navigation -->
                 <nav class="main-nav">
+                    <!-- Mobile Menu Toggle Button (for smaller screens) -->
                     <button class="mobile-menu-toggle" aria-label="Toggle menu">
                         <i class="fas fa-bars"></i>
                     </button>
+
+                    <!-- Navigation Links -->
                     <ul class="nav-list">
                         <li><a href="what-we-do.html" class="nav-link"><span>What we do</span></a></li>
                         <li><a href="who-we-serve.html" class="nav-link"><span>Who we serve</span></a></li>
-                        <li><a href="Why-Prajay-AI-Labs.html" class="nav-link"><span>Why Prajay AI Labs</span></a></li>
-                        <li><a href="perspectives.html" class="nav-link"><span>Perspectives</span></a></li>
-                        <li><a href="government.html" class="nav-link"><span>Government</span></a></li>
+                        <li><a href="Why-Synapse-AI.html" class="nav-link"><span>Why Synapse AI</span></a></li>
                     </ul>
                 </nav>
-            </div>
-            <div class="header-right">
+
                 <a href="contact-us.html" class="contact-button">
                     <span>Contact Us</span>
-                    <div class="button-background"></div>
+                    <div class="button-background"></div>  <!--  Decorative element -->
                 </a>
-                <button class="search-icon" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Main content specific to Contact Us page -->
-        <section class="page-content">
-            <h1>Contact Us</h1>
-            <p>This is the "Contact Us" page. Add your contact form or information here.</p>
+
+        <section class="contact-section" data-aos="fade-up">
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p>We're here to answer your questions and discuss how Synapse AI can help your business.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info-container">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p><a href="mailto:info@synapseai.com">info@synapseai.com</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Innovation Drive, Suite 400<br>Tech City, CA 91234<br>United States</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="contact-form-container">
+                    <form id="contact-form" action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </section>
+
+
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-links">
+                <!-- Footer Column 1: Services -->
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
@@ -65,54 +116,163 @@
                         <li><a href="#">Operations Management</a></li>
                     </ul>
                 </div>
+
+                <!-- Footer Column 2: Specializations -->
+                <div class="footer-column">
+                    <h4>Specializations</h4>
+                    <ul>
+                        <li><a href="#">Enterprise Architecture</a></li>
+                        <li><a href="#">Salesforce</a></li>
+                        <li><a href="#">Microsoft</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">Data Analytics with AI / ML</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column 3: Company -->
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="what-we-do.html">What we do</a></li>
+                        <li><a href="who-we-serve.html">Who we serve</a></li>
+                        <li><a href="Why-Synapse-AI.html">Why Synapse AI</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
+
+                <!-- Footer Column 4: Connect (Social Media) -->
                 <div class="footer-column">
                     <h4>Connect</h4>
                     <div class="social-icons">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/company/synapse4ai" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Footer Bottom (Copyright and Legal Links) -->
         <div class="footer-bottom">
-            <p>© 2025 Prajay AI Labs. All rights reserved.</p>
-            <ul class="legal-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
+            <p style="text-align: center; width: 100%;">© 2025 Synapse AI.  All rights reserved.</p>
+            <!-- Removed legal links -->
         </div>
     </footer>
 
-    <!-- Include AOS JS -->
+    <!-- Include AOS.js for scroll animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- JavaScript for interactivity -->
     <script>
+        // Ensure DOM is fully loaded before running scripts
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animation library
+            // Initialize AOS with custom settings
             AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
+                duration: 800,           // Animation duration in milliseconds
+                easing: 'ease-in-out',   // Smooth easing for animations
+                once: true,              // Animate only once on scroll
+                mirror: false            // Do not animate on scroll up
             });
 
-            // Mobile menu toggle
+            // Mobile menu toggle functionality
             const menuToggle = document.querySelector('.mobile-menu-toggle');
             const navList = document.querySelector('.nav-list');
-
             if (menuToggle) {
                 menuToggle.addEventListener('click', () => {
                     navList.classList.toggle('active');
                 });
             }
+
+            // Smooth scrolling for page navigation links with offset
+            const pageNavLinks = document.querySelectorAll('.page-nav-link');
+            pageNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const offset = 50; // Adjusted offset for sticky nav
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        if (navList.classList.contains('active')) {
+                            navList.classList.remove('active');
+                        }
+                    }
+                });
+            });
         });
+
+        // Include AOS JS
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize AOS animation library
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
+
+                // Mobile menu toggle
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                const navList = document.querySelector('.nav-list');
+
+                if (menuToggle) {
+                    menuToggle.addEventListener('click', () => {
+                        navList.classList.toggle('active');
+                    });
+                }
+                // Form submission handling (basic example, needs server-side processing)
+                const contactForm = document.getElementById('contact-form');
+                if (contactForm) {
+                  contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent the default form submission
+                      //  Collect form data
+                     const formData = new FormData(this);
+
+                     //Basic validation
+                     let isValid = true;
+                    const name = formData.get('name');
+                    const email = formData.get('email');
+                    const message = formData.get('message');
+
+                    if (!name || name.trim() === "") {
+                        alert("Please enter your name.");
+                        isValid = false;
+                      }
+                    if (!email || email.trim() === "" || !validateEmail(email)) {
+                        alert("Please enter your Email.");
+                        isValid = false;
+                    }
+
+                    if (!message || message.trim() === "") {
+                       alert("Please enter a message.");
+                        isValid = false;
+                     }
+
+                     if (isValid){
+                    // Display a success message (you would typically send the data to a server here)
+                     alert('Thank you for your message! We will get back to you soon.');
+
+                    // Optionally reset the form
+                     contactForm.reset();
+                     }
+                });
+
+                function validateEmail(email){
+                 const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                 return re.test(String(email).toLowerCase());
+                }
+              }
+            });
+
+        </script>
     </script>
 </body>
 </html>

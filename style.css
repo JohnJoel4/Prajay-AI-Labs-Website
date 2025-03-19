@@ -67,7 +67,7 @@ header:hover {
 /* Container for header content with centered alignment and max width */
 .header-container {
     display: flex;
-    justify-content: space-between;    /* Distribute items evenly */
+    justify-content: flex-end;    /* Align items to the right */
     align-items: center;               /* Vertically center items */
     max-width: 1280px;                 /* Limit width for readability */
     margin: 0 auto;                    /* Center the container */
@@ -93,13 +93,8 @@ header:hover {
 .header-logo {
     width: 35px;
     height: auto;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce effect */
+    /* Removed transition effect */
     margin-right: 10px;                /* Space between logo and text */
-}
-
-/* Add playful hover effect to logo image */
-.logo-link:hover .header-logo {
-    transform: scale(1.15) rotate(5deg); /* Scale up and rotate slightly */
 }
 
 /* Style logo text with bold typography */
@@ -119,7 +114,7 @@ header:hover {
 .main-nav {
     display: flex;
     align-items: center;
-    margin-left: auto;                 /* Push nav to the right */
+    margin-left: 20px;                 /* Add some space between nav and contact button */
 }
 
 /* Navigation list with spacing between items */
@@ -198,17 +193,19 @@ header:hover {
 /* Style contact button with animated background fill */
 .contact-button {
     position: relative;
-    padding: 10px 24px;
+    padding: 10px 24px; /* Adjusted padding */
     border-radius: 6px;
     font-weight: 600;
     color: var(--primary-color);
     background-color: transparent;
-    font-size: 0.95rem;
+    font-size: 0.95rem; /* Adjusted font size */
     letter-spacing: 0.5px;
     border: 2px solid var(--primary-color);
     overflow: hidden;
     z-index: 1;
     display: inline-block;
+    font-family: var(--font-secondary);
+    transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 /* Ensure text stays above background animation */
@@ -239,47 +236,6 @@ header:hover {
 /* Change text color on hover */
 .contact-button:hover span {
     color: white;
-}
-
-/* Style search icon button with circular hover effect */
-.search-icon {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    color: var(--text-medium);
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Circular background effect on hover */
-.search-icon::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(243, 156, 18, 0.1);
-    border-radius: 50%;
-    transform: scale(0);               /* Hidden by default */
-    transition: transform 0.3s ease;
-}
-
-/* Change icon color and show background on hover */
-.search-icon:hover {
-    color: var(--primary-color);
-}
-
-/* Expand background circle on hover */
-.search-icon:hover::before {
-    transform: scale(1);
 }
 
 /* Homepage Slider Styles */
@@ -906,9 +862,9 @@ header:hover {
     100% { opacity: 0; }
 }
 
-/* Why Prajay AI Labs Section */
+/* Why Synapse AI Labs Section */
 /* Style section similar to service cards but without hover effects */
-.why-prajay-ai-labs {
+.why-Synapse-ai-labs {
     background-color: var(--bg-light);
     border-radius: 8px;
     padding: 30px;
@@ -920,18 +876,18 @@ header:hover {
 }
 
 /* Remove hover transformations */
-.why-prajay-ai-labs:hover {
+.why-Synapse-ai-labs:hover {
     transform: none;
     box-shadow: 0 2px 10px var(--shadow-light); /* Maintain original shadow */
 }
 
 /* Hide glow effect on hover */
-.why-prajay-ai-labs:hover::before {
+.why-Synapse-ai-labs:hover::before {
     display: none;
 }
 
 /* Style section heading */
-.why-prajay-ai-labs h3 {
+.why-Synapse-ai-labs h3 {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 10px;
@@ -940,7 +896,7 @@ header:hover {
 }
 
 /* Style description text */
-.why-prajay-description {
+.why-Synapse-ai-description {
     font-size: 1.1rem;
     color: var(--text-medium);
     margin-bottom: 20px;
@@ -957,7 +913,7 @@ header:hover {
 .practical-leadership h4 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--secondary-color);
+    color: var (--secondary-color);
     margin-bottom: 10px;
 }
 
@@ -1018,7 +974,7 @@ header:hover {
 }
 
 /* Optional animation for section entry */
-.why-prajay-ai-labs.aos-animate {
+.why-synapse-ai-labs.aos-animate {
     animation: slideInUp 0.6s ease-out;
 }
 
@@ -1218,7 +1174,7 @@ footer {
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the content */
     align-items: center;
     flex-wrap: wrap;
 }
@@ -1226,15 +1182,14 @@ footer {
 /* Style bottom text */
 .footer-bottom p {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: #ffffff;
+    text-align: center; /* Center the text */
+    width: 100%; /* Ensure it takes full width */
 }
 
 /* Layout legal links */
 .legal-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+    display: none; /* Hide legal links */
 }
 
 /* Style legal links */

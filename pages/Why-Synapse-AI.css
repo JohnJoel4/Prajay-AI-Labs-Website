@@ -1,0 +1,899 @@
+/* --- COMPLETE CSS FILE --- */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #f39c12;
+    --secondary-color: #2c3e50;
+    --bg-light: #f9f9f9;
+    --bg-white: #ffffff;
+    --text-dark: #333333;
+    --text-medium: #5a6a7a;
+    --text-light: #999999;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-primary: rgba(243, 156, 18, 0.3);
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color var(--transition-normal);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--bg-white);
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+    box-shadow: 0 2px 12px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.4s ease;
+}
+
+header:hover {
+    box-shadow: 0 4px 20px var(--shadow-light);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-logo {
+    width: 35px;
+    height: auto;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-right: 10px;
+}
+
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    color: var(--secondary-color);
+}
+
+.accent-text {
+    color: var(--primary-color);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    padding: 8px 0;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.nav-link span {
+    position: relative;
+    display: inline-block;
+    transition: transform var(--transition-normal);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-link:hover span {
+    transform: translateY(-3px);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mobile-menu-toggle {
+    display: none; /* Hidden by default, shown on smaller screens */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: color var(--transition-normal);
+}
+
+.mobile-menu-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* Button Styles */
+.contact-button {
+    position: relative;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: transparent;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border: 2px solid var(--primary-color);
+    overflow: hidden;
+    z-index: 1;
+    display: inline-block;
+}
+
+.contact-button span {
+    position: relative;
+    z-index: 2;
+    transition: color var(--transition-normal);
+}
+
+.button-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+.contact-button:hover .button-background {
+    transform: translateY(0);
+}
+
+.contact-button:hover span {
+    color: white;
+}
+
+.search-icon {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.search-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(243, 156, 18, 0.1);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.search-icon:hover {
+    color: var(--primary-color);
+}
+
+.search-icon:hover::before {
+    transform: scale(1);
+}
+
+/* --- REQUIRED CSS for Sticky Section Navigator --- */
+
+/* Section Navigator Styles */
+.section-navigator {
+  position: sticky;
+  top: 70px; /* Below the main header. Adjust as needed! */
+  background-color: #2c3e50; /* Updated background color */
+  border-bottom: 1px solid #ddd; /* Optional border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  z-index: 999; /* Below header (which should be 1000), above content */
+  padding: 10px 0;
+}
+
+.section-navigator ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section-navigator ul li a {
+  color: white; /* Ensuring text remains visible */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block; /* Important for padding/margin */
+}
+
+.section-navigator ul li a:hover,
+.section-navigator ul li a:focus {
+  background-color: var(--primary-color); /* Or your hover color */
+  color: white; /* Keeping text white on hover */
+}
+
+/* Responsive adjustments (for smaller screens) */
+@media (max-width: 768px) {
+  .section-navigator {
+    top: 60px; /* Adjust top value if needed */
+    overflow-x: auto; /* Horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+  .section-navigator ul {
+    display: inline-flex; /* Inline-flex for horizontal layout */
+  }
+}
+
+/* Smaller Mobile Devices */
+@media (max-width: 480px) {
+  .section-navigator {
+    top: 57px; /* Further adjustment might be needed */
+  }
+}
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Services Menu */
+.services-menu {
+    background-color: var(--bg-light);
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.services-menu ul li {
+    display: inline;
+}
+
+.services-menu ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.services-menu ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-light);
+}
+
+/* Section Styles */
+.application-development,
+.mobile-application-development,
+.cloud-services,
+.analytical-services,
+.iot,
+.training {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background-color: var(--bg-light);
+}
+
+.application-development .content,
+.mobile-application-development .content,
+.cloud-services .content,
+.analytical-services .content,
+.iot .content,
+.training .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.application-development .text-content,
+.mobile-application-development .text-content,
+.cloud-services .text-content,
+.analytical-services .text-content,
+.iot .text-content,
+.training .text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.application-development .text-content h1,
+.mobile-application-development .text-content h1,
+.cloud-services .text-content h1,
+.analytical-services .text-content h1,
+.iot .text-content h1,
+.training .text-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.application-development .text-content p,
+.mobile-application-development .text-content p,
+.cloud-services .text-content p,
+.analytical-services .text-content p,
+.iot .text-content p,
+.training .text-content p {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+.application-development .image-content,
+.mobile-application-development .image-content,
+.cloud-services .image-content,
+.analytical-services .image-content,
+.iot .image-content,
+.training .image-content {
+    flex: 1;
+    text-align: right;
+}
+
+.application-development .image-content img,
+.mobile-application-development .image-content img,
+.cloud-services .image-content img,
+.analytical-services .image-content img,
+.iot .image-content img,
+.training .image-content img {
+    max-width: 100%;
+    height: auto;
+}
+/* Styles for the Hero Section */
+:root {
+  --primary-color: #e08b20;
+  --primary-dark: #cc7a10;
+  --text-dark: #333333;
+  --text-medium: #555555;
+  --text-light: #777777;
+  --bg-white: #ffffff;
+  --bg-light: #f5f7fa;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  background-color: var(--bg-light);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.hero-text span {
+  color: var(--primary-color);
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+  max-width: 550px;
+}
+
+/* Increased Image Size */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 220px; /* Increased from default */
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-image img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .hero-text {
+      text-align: center;
+  }
+
+  .hero-image img {
+      width: 180px; /* Adjusted for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+      font-size: 2.2rem;
+  }
+
+  .hero-text p {
+      font-size: 1rem;
+  }
+
+  .hero-image img {
+      width: 160px; /* Smaller for extra-small screens */
+  }
+}
+
+
+/* Client Success Section Styles */
+/* Client Success Section Styles */
+/* Client Success Section Styles */
+.client-success-section {
+  padding: 60px 20px;
+  background-color: var(--bg-light);
+}
+
+.client-success-content {
+  max-width: 1000px; /* Reduced from 1200px */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.client-success-content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+}
+
+/* Remove the services-container and services-grid classes */
+.services-container, .services-grid {
+  display: block !important;
+}
+
+.client-success-content .why-us-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 900px; /* Added max-width constraint */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .client-success-content .why-us-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Style the service-card to match why-us-card */
+.client-success-section .service-card {
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  padding: 2rem 1.5rem; /* Adjusted padding */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  min-height: 420px; /* Increased to accommodate content vertically */
+  max-width: 300px; /* Added to restrict horizontal width */
+  margin: 0 auto; /* Center the card in its grid cell */
+}
+
+.client-success-section .service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.client-success-section .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.client-success-section .service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.client-success-section .service-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(243, 156, 18, 0.1);
+  transition: all 0.3s ease;
+}
+
+.client-success-section .service-card:hover .service-icon {
+  background-color: var(--primary-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.client-success-section .service-card h3 {
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.client-success-section .service-card:hover h3 {
+  color: var(--primary-color);
+}
+
+.client-success-section .service-card p {
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  max-width: 100%; /* Ensure text doesn't overflow */
+}
+
+/* Why Us Section Styles */
+/* Why Us Section Styles */
+.why-us-section {
+    padding: 80px 20px;
+    background-color: var(--bg-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 20% 20%, rgba(243, 156, 18, 0.05) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.why-us-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.why-us-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.why-us-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-medium);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-us-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.why-us-card {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.why-us-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.why-us-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.why-us-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(243, 156, 18, 0.1);
+    transition: all 0.3s ease;
+}
+
+.why-us-card:hover .card-icon {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.why-us-card h3 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.why-us-card:hover h3 {
+    color: var(--primary-color);
+}
+
+.why-us-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .why-us-section {
+        padding: 60px 20px;
+    }
+    
+    .why-us-content h2 {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .why-us-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .card-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--secondary-color);
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.footer-column ul li a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color var(--transition-normal);
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}

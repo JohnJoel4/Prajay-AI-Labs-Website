@@ -90,10 +90,7 @@ header:hover {
   margin-right: 10px;                 /* Space between logo and text */
 }
 
-/* Animate logo on hover */
-.logo-link:hover .header-logo {
-  transform: scale(1.15) rotate(5deg); /* Scale and rotate */
-}
+
 
 /* Style logo text with bold typography */
 .logo-text {
