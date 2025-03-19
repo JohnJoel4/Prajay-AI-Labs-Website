@@ -1,5 +1,12 @@
 /* style.css (Main Stylesheet) */
 
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Define CSS custom properties for consistent theming and easy updates */
 :root {
   --primary-color: #f39c12;           /* Primary brand color for accents */
@@ -37,150 +44,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   color: var(--text-medium);
   margin-bottom: 1em;                 /* Consistent spacing below paragraphs */
-}
-
-/* --- Header Styles --- */
-/* Style header with sticky positioning and shadow */
-header {
-  background-color: var(--bg-white);
-  padding: 15px 20px;                 /* Consistent padding */
-  border-bottom: 1px solid rgba(221, 221, 221, 0.5); /* Subtle border */
-  box-shadow: 0 2px 12px var(--shadow-light); /* Light shadow for depth */
-  position: sticky;                   /* Sticks to top on scroll */
-  top: 0;
-  z-index: 1000;                      /* High z-index to stay above content */
-  transition: box-shadow 0.4s ease;   /* Smooth shadow transition on hover */
-}
-
-/* Enhance shadow on header hover */
-header:hover {
-  box-shadow: 0 4px 20px var(--shadow-light);
-}
-
-/* Flex container for header content */
-.header-container {
-  display: flex;
-  justify-content: space-between;     /* Distribute items evenly */
-  align-items: center;                /* Center vertically */
-  max-width: 1280px;                  /* Limit width for larger screens */
-  margin: 0 auto;                     /* Center container */
-}
-
-/* Align logo elements in header-left */
-.header-left {
-  display: flex;
-  align-items: center;                /* Center logo vertically */
-}
-
-/* Style logo link with hover effect containment */
-.logo-link {
-  margin-right: 40px;                 /* Space from nav */
-  display: flex;
-  align-items: center;                /* Align logo and text */
-  position: relative;
-  overflow: hidden;                   /* Contain hover effects */
-  text-decoration: none;              /* Remove underline from logo link */
-}
-
-/* Style logo image with playful hover animation */
-.header-logo {
-  width: 35px;
-  height: auto;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce effect */
-  margin-right: 10px;                 /* Space between logo and text */
-}
-
-
-
-/* Style logo text with bold typography */
-.logo-text {
-  font-family: var(--font-primary);
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 0.5px;              /* Slight spacing for readability */
-  color: var(--secondary-color);
-}
-
-/* Flex layout for main navigation */
-.main-nav {
-  display: flex;
-  align-items: center;                /* Center nav items */
-}
-
-/* Style navigation list with spacing */
-.nav-list {
-  display: flex;
-  gap: 30px;                          /* Space between items */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Style nav links with animated underline */
-.nav-link {
-  font-family: var(--font-secondary);
-  font-weight: 500;
-  position: relative;
-  padding: 8px 0;
-  display: inline-block;
-  overflow: hidden;                   /* Contain pseudo-element */
-  text-decoration: none;
-  color: var(--text-dark);
-}
-
-/* Smooth text movement on hover */
-.nav-link span {
-  position: relative;
-  display: inline-block;
-  transition: transform var(--transition-normal);
-}
-
-/* Underline effect using pseudo-element */
-.nav-link::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--primary-color);
-  transform: scaleX(0);               /* Hidden by default */
-  transform-origin: right;
-  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); /* Smooth scaling */
-}
-
-/* Show underline on hover */
-.nav-link:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Lift text on hover */
-.nav-link:hover span {
-  transform: translateY(-3px);
-}
-
-/* Flex layout for header-right with buttons and search */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;                          /* Space between items */
-}
-
-/* Mobile menu toggle, hidden by default */
-.mobile-menu-toggle {
-  display: none;                      /* Visible only on mobile */
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--text-dark);
-  transition: color var(--transition-normal);
-}
-
-/* Change toggle color on hover */
-.mobile-menu-toggle:hover {
-  color: var(--primary-color);
 }
 
 /* --- Button Styles --- */

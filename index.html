@@ -365,31 +365,42 @@
         </div>
     </footer>
 
-    <!-- JavaScript Libraries and Initialization -->
+     <!-- JavaScript Libraries and Initialization -->
 
     <!-- AOS Initialization -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            // Initialize AOS animation library
+             // Initialize AOS animation library
             AOS.init({
                 duration: 800,        // Animation duration in milliseconds
                 easing: 'ease-in-out', // Easing function for the animation
                 once: true            // Whether animation should happen only once
             });
 
-            // Mobile Menu Toggle
-            const menuToggle = document.querySelector('.mobile-menu-toggle');
+
+             // Mobile Menu Toggle - Corrected to work with updated classes and structure.
+            const menuToggle = document.querySelector('.mobile-menu-toggle'); // Use the correct class
             const navList = document.querySelector('.nav-list');
 
-            if (menuToggle) {  //  Check if menuToggle exists
+            if (menuToggle) {
                 menuToggle.addEventListener('click', () => {
-                    navList.classList.toggle('active'); // Toggle the 'active' class on the navigation list
+                    navList.classList.toggle('active');
                 });
             }
+            // Close menu when a nav link is clicked (better mobile UX)
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navList.classList.remove('active');
+                    }
+                });
+            });
 
-            // Tab Functionality (for "What We Do" section)
+
+
+           // Tab Functionality (for "What We Do" section)
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabPanes = document.querySelectorAll('.tab-pane');
 

@@ -21,8 +21,8 @@
     --transition-fast: 0.2s ease;  /* Fast transition for subtle animations */
     --transition-normal: 0.3s ease; /* Standard transition speed for interactivity */
     --transition-slow: 0.5s ease;  /* Slow transition for dramatic effects */
-    --font-primary: 'Poppins', sans-serif; /* Primary font for headings */
-    --font-secondary: 'Roboto', sans-serif; /* Secondary font for body text */
+    --font-primary: 'Open Sans', sans-serif; /* Primary font for general use */
+    --font-secondary: 'Roboto', sans-serif; /* Secondary font for headings */
 }
 
 /* Set default body styles for typography, layout, and background */
@@ -58,144 +58,7 @@ ul {
 /* Header Styles */
 /* Style header with sticky positioning and subtle shadow */
 header {
-    background-color: var(--bg-white);
-    padding: 15px 20px;                /* Consistent padding */
-    border-bottom: 1px solid rgba(221, 221, 221, 0.5); /* Light border for separation */
-    box-shadow: 0 2px 12px var(--shadow-light); /* Subtle elevation */
-    position: sticky;                  /* Sticks to top on scroll */
-    top: 0;
-    z-index: 1000;                     /* Ensure header stays above other content */
-    transition: box-shadow 0.4s ease;  /* Smooth shadow transition on hover */
-}
-
-/* Enhance shadow on header hover for interactivity */
-header:hover {
-    box-shadow: 0 4px 20px var(--shadow-light);
-}
-
-/* Flex container for header content with even distribution */
-.header-container {
-    display: flex;
-    justify-content: flex-end;    /* Align items to the right */
-    align-items: center;               /* Vertically center items */
-    max-width: 1280px;                 /* Limit width for readability */
-    margin: 0 auto;                    /* Center the container */
-}
-
-/* Left section of header for logo */
-.header-left {
-    display: flex;
-    align-items: center;               /* Center logo vertically */
-    margin-left: 0;                    /* Align to the left edge */
-}
-
-/* Style logo link with spacing and hover effect containment */
-.logo-link {
-    margin-right: 40px;                /* Space between logo and nav */
-    display: flex;
-    align-items: center;               /* Center logo elements */
-    position: relative;
-    overflow: hidden;                  /* Contain hover effects */
-}
-
-/* Style logo image with animated scaling */
-.header-logo {
-    width: 35px;
-    height: auto;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bounce effect */
-    margin-right: 10px;                /* Space between logo and text */
-}
-
-/* Style logo text with bold typography */
-.logo-text {
-    font-weight: 700;
-    font-size: 1.4rem;
-    letter-spacing: 0.5px;             /* Slight spacing for readability */
-    color: var(--secondary-color);
-}
-
-/* Highlight accent text with primary color */
-.accent-text {
-    color: var(--primary-color);
-}
-
-/* Main navigation layout */
-.main-nav {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;                 /* Add some space between nav and contact button */
-}
-
-/* Navigation list with spacing between items */
-.nav-list {
-    display: flex;
-    gap: 30px;                         /* Space between nav items */
-    margin-left: auto;                 /* Ensure right alignment */
-}
-
-/* Style individual nav links with animated underline effect */
-.nav-link {
-    font-weight: 500;
-    position: relative;
-    padding: 8px 0;
-    display: inline-block;
-    overflow: hidden;                  /* Contain pseudo-element */
-}
-
-/* Smooth text movement on hover */
-.nav-link span {
-    position: relative;
-    display: inline-block;
-    transition: transform var(--transition-normal);
-}
-
-/* Underline effect using pseudo-element */
-.nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-color);
-    transform: scaleX(0);              /* Hidden by default */
-    transform-origin: right;
-    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1); /* Smooth scaling */
-}
-
-/* Show underline on hover */
-.nav-link:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* Lift text slightly on hover */
-.nav-link:hover span {
-    transform: translateY(-3px);
-}
-
-/* Right section of header for buttons and search */
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;                         /* Space between items */
-    margin-left: auto;                 /* Push to far right */
-}
-
-/* Mobile menu toggle, hidden by default */
-.mobile-menu-toggle {
-    display: none;                     /* Visible only on smaller screens */
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-dark);
-    transition: color var(--transition-normal);
-}
-
-/* Change toggle color on hover */
-.mobile-menu-toggle:hover {
-    color: var(--primary-color);
+    display: none; /* Hide header */
 }
 
 /* Button Styles */
@@ -358,7 +221,7 @@ header:hover {
     font-size: 1.25rem;
     color: var(--text-medium);
     margin-bottom: 2rem;
-    font-family: var(--font-secondary);
+    font-family: var (--font-secondary);
 }
 
 /* Section Styles */
@@ -716,7 +579,7 @@ header:hover {
 /* Invert colors on hover */
 .cta-button:hover {
     background-color: var(--bg-white);
-    color: var(--primary-color);
+    color: var (--primary-color);
 }
 
 /* Footer Styles */
@@ -813,7 +676,7 @@ footer {
 /* Style legal links with hover effect */
 .legal-links a {
     color: var (--text-light);
-    transition: color var(--transition-normal);
+    transition: color var (--transition-normal);
 }
 
 /* Brighten legal links on hover */
