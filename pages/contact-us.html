@@ -14,72 +14,99 @@
 </head>
 <body>
     <!-- Header section with navigation -->
-    <!-- Removed header section -->
-    <main>
+    <header>
+        <div class="header-container">
+            <!-- Logo and Brand Name -->
+            <div class="header-left">
+                <a href="../index.html" class="logo-link">
+                    <img src="../assests/Synapse_logo.png" alt="Synapse Logo" class="header-logo">
+                    <span class="logo-text">Synapse AI</span>
+                </a>
+            </div>
 
+            <!-- Header Right Section (Navigation, Contact and Search) -->
+            <div class="header-right">
+                <!-- Main Navigation -->
+                <nav class="main-nav">
+                    <!-- Mobile Menu Toggle Button (for smaller screens) -->
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <!-- Navigation Links -->
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link"><span>Home</span></a></li>
+                        <li><a href="what-we-do.html" class="nav-link"><span>What we do</span></a></li>
+                        <li><a href="who-we-serve.html" class="nav-link"><span>Who we serve</span></a></li>
+                        <li><a href="Why-Synapse-AI.html" class="nav-link"><span>Why Synapse AI</span></a></li>
+                    </ul>
+                </nav>
+
+                <a href="contact-us.html" class="contact-button">
+                    <span>Contact Us</span>
+                    <div class="button-background"></div>  <!--  Decorative element -->
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
         <section class="contact-section" data-aos="fade-up">
             <div class="contact-header">
                 <h2>Get in Touch</h2>
-                <p>We're here to answer your questions and discuss how Synapse AI can help your business.</p>
             </div>
+
             <div class="contact-content">
-                <div class="contact-info-container">
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <p><a href="mailto:info@synapseai.com">info@synapseai.com</a></p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>123 Innovation Drive, Suite 400<br>Tech City, CA 91234<br>United States</p>
-                        </div>
-                    </div>
-                </div>
-        
                 <div class="contact-form-container">
+                    <div class="form-header">
+                    </div>
+
                     <form id="contact-form" action="#" method="POST">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
                         <div class="form-group">
-                            <label for="phone">Phone (optional)</label>
-                            <input type="tel" id="phone" name="phone">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your Company">
+                        </div>
+
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
+
                         <button type="submit" class="submit-button">Send Message</button>
                     </form>
                 </div>
             </div>
         </section>
-
-
     </main>
 
-    <footer>
+   <footer>
         <div class="footer-content">
             <div class="footer-links">
                 <!-- Footer Column 1: Services -->
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#">Digitalization</a></li>
-                        <li><a href="#">Business Transformation</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">Operations Management</a></li>
+                        <li><a href="../services/Digitalization.html">Digitalization</a></li>
+                        <li><a href="../services/Business_Technology.html">Business Transformation</a></li>
+                        <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="../services/Operations_Management.html">Operations Management</a></li>
+                        <li><a href="../Talent_Mobilization.html">Talent Mobilization</a></li>
+
                     </ul>
                 </div>
 
@@ -87,11 +114,10 @@
                 <div class="footer-column">
                     <h4>Specializations</h4>
                     <ul>
-                        <li><a href="#">Enterprise Architecture</a></li>
-                        <li><a href="#">Salesforce</a></li>
-                        <li><a href="#">Microsoft</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">Data Analytics with AI / ML</a></li>
+                        <li><a href="../specalizations/Enterprise_Architecture.html">Enterprise Architecture</a></li>
+                        <li><a href="../specalizations/Salesforce.html">Salesforce</a></li>
+                        <li><a href="../specalizations/Cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="../specalizations/Data_Analytics.html">Data Analytics with AI / ML</a></li>
                     </ul>
                 </div>
 
@@ -132,10 +158,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize AOS with custom settings
             AOS.init({
-                duration: 800,           // Animation duration in milliseconds
-                easing: 'ease-in-out',   // Smooth easing for animations
-                once: true,              // Animate only once on scroll
-                mirror: false            // Do not animate on scroll up
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
             });
 
             // Mobile menu toggle functionality
@@ -147,98 +173,122 @@
                 });
             }
 
-            // Smooth scrolling for page navigation links with offset
-            const pageNavLinks = document.querySelectorAll('.page-nav-link');
-            pageNavLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
+            // FAQ toggle functionality  (Removed as there's no FAQ)
 
-                    if (targetElement) {
-                        const offset = 50; // Adjusted offset for sticky nav
-                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = elementPosition - offset;
+            // Form validation
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
+                    // Collect form data
+                    const formData = new FormData(this);
 
-                        // Close mobile menu if open
-                        if (navList.classList.contains('active')) {
-                            navList.classList.remove('active');
-                        }
-                    }
-                });
-            });
-        });
-
-        // Include AOS JS
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Initialize AOS animation library
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-in-out',
-                    once: true
-                });
-
-                // Mobile menu toggle
-                const menuToggle = document.querySelector('.mobile-menu-toggle');
-                const navList = document.querySelector('.nav-list');
-
-                if (menuToggle) {
-                    menuToggle.addEventListener('click', () => {
-                        navList.classList.toggle('active');
-                    });
-                }
-                // Form submission handling (basic example, needs server-side processing)
-                const contactForm = document.getElementById('contact-form');
-                if (contactForm) {
-                  contactForm.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Prevent the default form submission
-                      //  Collect form data
-                     const formData = new FormData(this);
-
-                     //Basic validation
-                     let isValid = true;
+                    // Basic validation
+                    let isValid = true;
                     const name = formData.get('name');
                     const email = formData.get('email');
+                   // const phone = formData.get('phone'); // Optional
+                    const company = formData.get('company');
                     const message = formData.get('message');
 
                     if (!name || name.trim() === "") {
-                        alert("Please enter your name.");
+                        showError('name', 'Please enter your name');
                         isValid = false;
-                      }
+                    } else {
+                        removeError('name');
+                    }
+
                     if (!email || email.trim() === "" || !validateEmail(email)) {
-                        alert("Please enter your Email.");
+                        showError('email', 'Please enter a valid email address');
                         isValid = false;
+                    } else {
+                        removeError('email');
                     }
 
                     if (!message || message.trim() === "") {
-                       alert("Please enter a message.");
+                        showError('message', 'Please enter your message');
                         isValid = false;
-                     }
+                    } else {
+                        removeError('message');
+                    }
 
-                     if (isValid){
-                    // Display a success message (you would typically send the data to a server here)
-                     alert('Thank you for your message! We will get back to you soon.');
+                    if (isValid) {
+                        // Show success message
+                        showSuccessMessage();
 
-                    // Optionally reset the form
-                     contactForm.reset();
-                     }
+                        // Reset the form
+                        contactForm.reset();
+                    }
                 });
 
-                function validateEmail(email){
-                 const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                 return re.test(String(email).toLowerCase());
-                }
-              }
-            });
+                 // Input focus effects (Simplified for fewer fields)
+                const formInputs = contactForm.querySelectorAll('input, textarea');
+                formInputs.forEach(input => {
+                    input.addEventListener('focus', function() {
+                        this.classList.add('input-focused'); // Added class to input directly
+                    });
 
-        </script>
+                    input.addEventListener('blur', function() {
+                        this.classList.remove('input-focused'); // Remove class from input
+                    });
+                });
+            }
+
+            // Helper functions
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            function showError(fieldId, message) {
+                const field = document.getElementById(fieldId);
+                let errorElement = field.parentElement.querySelector('.error-message'); // Check parent
+
+                if (!errorElement) {
+                    errorElement = document.createElement('div');
+                    errorElement.className = 'error-message';
+                    errorElement.textContent = message;
+                    field.parentElement.appendChild(errorElement);
+                }
+                field.classList.add('field-error'); // Add to input directly
+            }
+
+            function removeError(fieldId) {
+                const field = document.getElementById(fieldId);
+                const errorElement = field.parentElement.querySelector('.error-message');
+
+                if (errorElement) {
+                    errorElement.remove();
+                }
+
+                field.classList.remove('field-error');  // Remove from input directly
+            }
+
+            function showSuccessMessage() {
+                // Remove existing message if any
+                const existingMessage = document.querySelector('.form-success-message');
+                if (existingMessage) {
+                    existingMessage.remove();
+                }
+
+                // Create success message
+                const successDiv = document.createElement('div');
+                successDiv.className = 'form-success-message notification-popup';
+                successDiv.innerHTML = '<i class="fas fa-check-circle"></i> Thank you for your message! We will get back to you soon.';
+
+                // Add to the body
+                document.body.appendChild(successDiv);
+
+                // Automatically remove after 5 seconds
+                setTimeout(() => {
+                    successDiv.classList.add('fade-out');
+                    setTimeout(() => {
+                        successDiv.remove();
+                    }, 500); // Remove after fade-out (0.5 seconds)
+                }, 5000);
+            }
+        });
     </script>
 </body>
 </html>

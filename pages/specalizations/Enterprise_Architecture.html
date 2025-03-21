@@ -3,18 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Technology Transformation - Prajay AI Labs</title>
+    <title>Enterprise Architecture - Synapse AI</title>
     <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="Business_Technology_Transformation.css">
+    <link rel="stylesheet" href="Enterprise_Architecture.css">
     <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Include AOS (Animate On Scroll) library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="../../script.js"></script>
+    <style>
+        /* Style for Digital Strategy & Transformation text */
+        .digital-strategy-text h1 {
+          color: #2c3e50; /* Set font color to #2c3e50 */
+          white-space: nowrap; /* Ensure the title appears in a single line */
+        }
+
+        /* Style for all headings */
+        h2, h3, .footer-column h4 {
+          color: #f39c12; /* Set font color to #f39c12 */
+          cursor: pointer; /* Make headings look clickable */
+          transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+      
+        /* Change heading color on click */
+        h2:active, h3:active, .footer-column h4:active{
+          color: #f39c12;
+        }
+
+        /* Color for symbols/icons */
+        .outcomes ul li i, .services ul li i {
+          color: #f39c12;
+        }
+
+        /* Fixed header styling */
+        #main-header {
+          display: none; /* Hide the main header */
+        }
+
+        #main-header .logo-text,
+        #main-header .nav-link,
+        #main-header .mobile-menu-toggle {
+            color: #ffffff;
+        }
+
+       #main-header .contact-button {
+           color: #ffffff;
+           border: 2px solid #ffffff;
+       }
+      
+      #main-header .contact-button:hover {
+         background-color: #ffffff;
+         color: #2c3e50
+      }
+      
+      #main-header .contact-button:hover span {
+          color: #2c3e50
+      }
+
+        .services-header {
+           top: 0;
+           background-color: #2c3e50; /* Set initial background color */
+        }
+
+        .services-header .service-link {
+           color: #ffffff; /* Set text color to white */
+        }
+        
+        body{
+          scroll-behavior: smooth;
+        }
+
+        /* Add more specific styles if needed to override any conflicting rules */
+
+        .back-button {
+            position: sticky; /* Make the back button sticky */
+            top: 10px; /* Position it 10px from the top */
+            z-index: 1000; /* Ensure it stays on top */
+        }
+
+    </style>
 </head>
 <body>
-    <main>
-        <!-- Page-specific content goes here -->
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <!-- Main Header -->
+    <header id="main-header">
+        <div class="logo-text">Synapse AI</div>
+        <nav class="nav-list">
+            <!-- ...existing code... -->
+        </nav>
+        <div class="mobile-menu-toggle">☰</div>
+    </header>
+
+    <!-- Services Sticky Header -->
+    <nav class="services-header" id="services-nav">
+        <div class="services-container">
+            <a href="#overview" class="service-link">Overview</a>
+            <a href="#digital-strategy-alignment" class="service-link">Digital Strategy</a>
+            <a href="#process-integration" class="service-link">Process Integration</a>
+            <a href="#information-management" class="service-link">Information Management</a>
+            <a href="#data-analytics" class="service-link">Data Analytics</a>
+            <a href="#differentiator-summary" class="service-link">Summary</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="digital-strategy" data-aos="fade-up">
+        <div class="digital-strategy-content">
+            <div class="digital-strategy-text" data-aos="fade-up">
+                <h1>Enterprise Architecture</h1>
+                <p>We create Holistic Solutions for our clients using Applied Enterprise Architecture principles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content sections -->
+    <main class="content-wrapper">
+        <!-- Overview Section -->
+        <section id="overview" class="overview section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Overview</h2>
+                <div class="section-content">
+                    <p>Adaptability is crucial in enterprise architecture. Technology leaders must be ready for change as requirements evolve. The business technology they manage should enable rapid responses to internal and external shifts. This urgency emphasizes the importance of adaptability in enterprise architecture.</p>
+                    <p>To carry out the work of enterprise architecture, technology leaders must have a seat at the organization’s strategy table and allow for the inevitable changes of plan so that when requirements change. The business technology they manage must be a responsive enabler, not a slow-moving impediment to responding to the internal and external forces of change.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adaptive Enterprise Architecture and IT Strategy -->
+        <section id="advisory" class="advisory section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Adaptive Enterprise Architecture and IT Strategy</h2>
+                <div class="section-content">
+                    <p>As an expression of the core purpose of Enterprise Architecture, DivIHN helps customers apply holistic technology concepts to the strategic enablement of business processes. An Adaptive Enterprise Architecture perspective emphasizes flexibility and adaptability, without security compromises, as highly valued criteria for decision-making. We promote holistic Enterprise Architecture thinking that considers more than just technology. Equally important are the people, their processes, and their tools.</P>
+                    <p>Enterprise architecture is often expressed visually through current and future state reference architecture diagrams, the identification of projects required to achieve that future state, and a roadmap to carry them out. In its fullest sense, when it encompasses organizational, governance, and technology planning, Enterprise Architecture is central to an effective IT strategy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications and Solutions Architecture -->
+        <section id="solution-design" class="solution-design section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Applications and Solutions Architecture</h2>
+                <div class="section-content">
+                    <p>For Synapse AI, Applications and Solutions Architecture focuses on flexibility and adaptability to support evolving business needs. We design solutions using the most appropriate technologies to solve complex problems with flexible integrations and reusable components. Key considerations include adopting microservices, APIs, and modern design patterns like Low Code/No Code, which provide scalability and enable rapid updates. We also prioritize data integration and analytics, ensuring seamless data flow across systems and leveraging advanced tools like AI and machine learning for actionable insights and data-driven decision-making. This approach ensures businesses can adapt quickly and make informed decisions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infrastructure and Cloud Architecture -->
+        <section id="implementation" class="implementation section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Infrastructure and Cloud Architecture</h2>
+                <div class="section-content">
+                    <p>Synapse AI's Infrastructure and Cloud Expert Architects help customers make strategic technology decisions by designing robust, scalable, and reusable foundations that support business operations. We emphasize cloud computing for scalability and agility, recommending cloud-based solutions to meet evolving needs. Our approach includes hybridization, modularity, and heterogeneous attack surfaces to create secure, cost-effective, and high-performing systems with seamless integration. Additionally, we advocate for software-defined infrastructure, such as software-defined networks and micro-segmentation, to enhance security and scalability within a Zero Trust Architecture.</p>                        
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Integrations -->
+        <section id="security-integrations" class="security-integrations section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Security Integrations</h2>
+                <div class="section-content">
+                    <p>Synapse AI's advisory service helps organizations rethink their Enterprise Architecture function by transitioning to a Community of Practice or Center of Excellence model. This involves creating a cross-disciplinary working group with hybrid roles, guided by leaders like a Chief Technology Officer. We assist in recognizing these hybrid roles, defining team structures, processes, and selecting tools tailored to the organization's goals and talent. This approach fosters decision-making, professional development for technical managers, and contributes to organizational learning, team development, and job enrichment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differentiator Summary -->
+        <section id="differentiator-summary" class="differentiator-summary section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Summary</h2>
+                <div class="section-content">
+                    <div class="diff-card">
+                        <p>Synapse AI's approach to Enterprise Architecture emphasizes adaptability and continuous change. Rather than a slow-moving structure, we focus on creating adaptive architectures that enhance business processes and IT value with long-term flexibility, security, and scalability. Our hybrid agile methodology is tailored to fit any organization, offering scalable solutions that shorten time-to-value, reduce risks, and optimize technology investments. We apply best practices like the ITIL V4 principles to ensure practical and effective solutions. Our team’s deep expertise combines consulting experience and hands-on management, backed by industry frameworks and research for optimal results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -23,59 +193,154 @@
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="../services/digitalization.html">Digitalization</a></li>
-                        <li><a href="../services/business-technology-transformation.html">Business Technology Transformation</a></li>
-                        <li><a href="../services/cybersecurity-services.html">Cybersecurity Services</a></li>
-                        <li><a href="../services/operations-management.html">Operations Management</a></li>
-                        <li><a href="../services/talent-mobilization.html">Talent Mobilization</a></li>
+                        <li><a href="../services/Digitalization.html">Digitalization</a></li>
+                        <li><a href="../services/Business_Technology.html">Business Transformation</a></li>
+                        <li><a href="../services/cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="../services/Operations_Management.html">Operations Management</a></li>
+                        <li><a href="../services/Talent_Mobilization.html">Talent Mobilization</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Specializations</h4>
+                    <ul>
+                        <li><a href="../specalizations/Enterprise_Architecture.html">Enterprise Architecture</a></li>
+                        <li><a href="../specalizations/Salesforce.html">Salesforce</a></li>
+                        <li><a href="../specalizations/Cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="../specalizations/Data_Analytics.html">Data Analytics with AI / ML</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>  <!--  Replace # with actual links -->
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="../contact-us.html">Contact</a></li>
+                        <li><a href="../what-we-do.html">What we do</a></li>
+                        <li><a href="../who-we-serve.html">Who we serve</a></li>
+                        <li><a href="../Why-Synapse-AI.html">Why Synapse AI</a></li>
+                        <li><a href="../contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Connect</h4>
                     <div class="social-icons">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>  <!-- Replace # with real links -->
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/company/synapse4ai" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Prajay AI Labs. All rights reserved.</p>
-            <ul class="legal-links">
-                <li><a href="#">Privacy Policy</a></li>  <!-- Replace # with actual links -->
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
+            <p>© 2025 Synapse AI. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Include AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
+     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animation library
+             // Initialize AOS for animations.  Use 'data-aos' attribute in HTML.
             AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
+                duration: 800,       // Animation duration
+                easing: 'ease-in-out', // Easing function
+                once: true,         // Animate only once
+                offset: 100        // Offset (in px) from the original trigger point
             });
-
-            // Mobile menu toggle
+            
+            // Mobile menu toggle (for smaller screens)
             const menuToggle = document.querySelector('.mobile-menu-toggle');
             const navList = document.querySelector('.nav-list');
-
-            if (menuToggle) {
+            if (menuToggle && navList) {
                 menuToggle.addEventListener('click', () => {
-                    navList.classList.toggle('active');
+                    if (navList) {
+                        navList.classList.toggle('active');
+                    }
                 });
+            }
+
+            // Smooth scrolling and sticky header logic
+            let isScrolling = false;
+
+            function smoothScroll(target) {
+              const targetElement = document.querySelector(target);
+              const servicesNav = document.getElementById('services-nav');
+              if (targetElement && servicesNav) {
+                const headerOffset = servicesNav.offsetHeight;
+                const elementPosition = targetElement.offsetTop;
+                const offsetPosition = elementPosition - headerOffset;
+
+                // Only if window > 768px, then smooth scrolling.
+                if (window.innerWidth > 768) {
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+                else {
+                   // For smaller screens, include main header offset
+                   const mainHeader = document.getElementById('main-header');
+                   if (mainHeader) {
+                       const mainHeaderOffset = mainHeader.offsetHeight;
+                       const smallScreenOffsetPosition = elementPosition - headerOffset - mainHeaderOffset;
+                       window.scrollTo({
+                          top: smallScreenOffsetPosition,
+                          behavior: "smooth"
+                       });
+                   }
+                }
+              }
+            }
+
+            const serviceLinks = document.querySelectorAll('.service-link');
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();  // Prevent default anchor behavior
+                    const target = this.getAttribute('href');
+                    smoothScroll(target); // Call smooth scroll function
+                });
+            });
+
+            // Function to set the active link based on scroll position
+            function setActiveLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const servicesNav = document.getElementById('services-nav');
+                if (servicesNav) {
+                    let scrollPosition = window.scrollY + servicesNav.offsetHeight + 10;  // Add a small buffer
+
+                    sections.forEach(section => {
+                        // Check if the current section is in view
+                        if (section.offsetTop <= scrollPosition &&
+                            (section.offsetTop + section.offsetHeight) > scrollPosition)
+                           {
+                            serviceLinks.forEach(link => {
+                                link.classList.remove('active');
+                                // Add 'active' class to the corresponding link
+                                if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
+                                    link.classList.add('active');
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+            // Sticky header functionality.  Adds 'sticky' class when scrolled.
+            const header = document.getElementById('services-nav');
+            if (header) {
+                let sticky = header.offsetTop;
+
+                function handleScroll() {
+                  if (!isScrolling) {  // Regular scroll
+                    if (window.pageYOffset > sticky) {
+                      header.classList.add("sticky");
+                      document.body.style.paddingTop = header.offsetHeight + 'px'; // Prevent content jump
+                    } else {
+                      header.classList.remove("sticky");
+                       document.body.style.paddingTop = '0px';
+                    }
+                  }
+
+                    setActiveLink(); // Update active link on scroll
+                }
+
+                window.addEventListener('scroll', handleScroll);
             }
         });
     </script>

@@ -3,17 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Technology Transformation - Prajay AI Labs</title>
+    <title>Cybersecurity - Synapse AI</title>
     <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="Business_Technology_Transformation.css">
+    <link rel="stylesheet" href="cybersecurity.css">
+    <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Include AOS (Animate On Scroll) library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="../../script.js"></script>
+    <style>
+        /* Style for Digital Strategy & Transformation text */
+        .digital-strategy-text h1 {
+          color: #2c3e50; /* Set font color to #2c3e50 */
+          white-space: nowrap; /* Ensure the title appears in a single line */
+        }
+
+        /* Style for all headings */
+        h2, h3, .footer-column h4 {
+          color: #f39c12; /* Set font color to #2c3e50 */
+          cursor: pointer; /* Make headings look clickable */
+          transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+      
+        /* Change heading color on click */
+        h2:active, h3:active, .footer-column h4:active{
+          color: #f39c12;
+        }
+
+        /* Color for symbols/icons */
+        .outcomes ul li i, .services ul li i {
+          color: #f39c12;
+        }
+
+        /* Fixed header styling */
+        #main-header {
+          display: none; /* Hide the main header */
+        }
+
+        #main-header .logo-text,
+        #main-header .nav-link,
+        #main-header .mobile-menu-toggle {
+            color: #ffffff;
+        }
+
+       #main-header .contact-button {
+           color: #ffffff;
+           border: 2px solid #ffffff;
+       }
+      
+      #main-header .contact-button:hover {
+         background-color: #ffffff;
+         color: #2c3e50
+      }
+      
+      #main-header .contact-button:hover span {
+          color: #2c3e50
+      }
+
+        .services-header {
+           top: 0;
+           background-color: #2c3e50; /* Set initial background color */
+        }
+
+        .services-header .service-link {
+           color: #ffffff; /* Set text color to white */
+        }
+        
+        body{
+          scroll-behavior: smooth;
+        }
+
+        /* Add more specific styles if needed to override any conflicting rules */
+
+        .back-button {
+            position: sticky; /* Make the back button sticky */
+            top: 10px; /* Position it 10px from the top */
+            z-index: 1000; /* Ensure it stays on top */
+        }
+
+    </style>
 </head>
 <body>
-    <main>
-        <!-- Page-specific content goes here -->
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <!-- Main Header -->
+    <header id="main-header">
+        <div class="logo-text">Synapse AI</div>
+        <nav class="nav-list">
+            <!-- ...existing code... -->
+        </nav>
+        <div class="mobile-menu-toggle">☰</div>
+    </header>
+
+    <!-- Services Sticky Header -->
+    <nav class="services-header" id="services-nav">
+        <div class="services-container">
+            <a href="#overview" class="service-link">Overview</a>
+            <a href="#digital-strategy-alignment" class="service-link">Advisory</a>
+            <a href="#process-integration" class="service-link">Assessments</a>
+            <a href="#information-management" class="service-link">Implementation</a>
+            <a href="#data-analytics" class="service-link">Remediation</a>
+            <a href="#operations" class="service-link">Operations</a>
+            <a href="#special-projects" class="service-link">Special Projects</a>
+            <a href="#differentiator-summary" class="service-link">Summary</a>
+            <!-- Removed Summary link -->
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="digital-strategy" data-aos="fade-up">
+        <div class="digital-strategy-content">
+            <div class="digital-strategy-text" data-aos="fade-up">
+                <h1>Cybersecurity Services</h1>
+                <p>As you drive your business with Digital Transformation,</p>
+                <p>we help make it Cyber Resilient across IT, OT, IoT, and People.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content sections -->
+    <main class="content-wrapper">
+        <!-- Overview Section -->
+        <section id="overview" class="overview section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Overview</h2>
+                <div class="section-content">
+                    <p>Defending and recovering from Cyberattacks has become a key part of business operations. Based on the industry, the IT, OT, and IoT need cyber protection. Information Technology (IT) includes Network Infrastructure, Cloud Infrastructure and Software Development whereas OT and IoT (Operational Technology & Internet of Things) include Manufacturing Plants, Power Grids, Utilities Pipeline, Hospitals, and more.</p>
+                    <p>DivIHN helps protect its Enterprise, Public Sector, Education Institutions, and SMBs (small to medium business) through its Cyber Governance, Architecture, and Monitoring expertise.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Strategy and Alignment Section -->
+        <section id="digital-strategy-alignment" class="digital-strategy-alignment section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Advisory</h2>
+                <div class="section-content">
+                    <p>Our customers, in any industry and of any size, engage with the best-in-class executive advisors from our CoE. Our Digital, Risk, and Cybersecurity Center of Excellence (CoE) serves as a Think-Tank to create a firm action backed by solid expertise. The customers benefit from the thought-capital we bring to sharpen their big-picture vision, strategies, execution plans, budgets, delivery roadmaps, team skills, and technology stack</p>
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Actionable Board-Room Material for CISOs</li>
+                                <li><i class="fas fa-check-circle"></i> Enhancement(s) in customer’s cybersecurity posture strategies</li>
+                                <li><i class="fas fa-check-circle"></i> Single Version of Truth from a multitude of assessment reports (NIST, ISO, Privacy, Regulatory, etc.)</li>
+                                <li><i class="fas fa-check-circle"></i> Business Executive-facing Cybersecurity Risk, Resilience, and Response strategies</li></ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-cog"></i>CISO Partner – Board, M&A, Strategic Think-Tank Help</li>
+                                <li><i class="fas fa-lightbulb"></i> Rationalize Multiple Assessments</li>
+                                <li><i class="fas fa-user-tie"></i>Cybersecurity Program Design, Planning, and Implementation</li>
+                                <li><i class="fas fa-user-tie"></i>Cyber Educations for Business Executive (including Ransomware Tabletops)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Integration and Automation Section -->
+        <section id="process-integration" class="process-integration section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Assessments</h2>
+                <div class="section-content">
+                    <p>We emphasize on a dual approach of assessing the cybersecurity risks, namely, the impact on business as well as to comply with regulations and standards. We start with identifying the sources of risks (see below), and provide a fit-for-purpose assessment to propose a prioritized set of actionable strategies and roadmaps.</p>
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Cybersecurity Risk Score and Gaps</li>
+                                <li><i class="fas fa-check-circle"></i> Remediation Roadmap and Budget Planning</li>
+                            </ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-cog"></i> Cyber Posture Assessments (CIS, ISO, NIST, SOC 2, etc.)</li>
+                                <li><i class="fas fa-lightbulb"></i>Baseline Assessments</li>
+                                <li><i class="fas fa-user-tie"></i> Deep-Dive Assessments</li>
+                                <li><i class="fas fa-user-tie"></i>Consolidation / Rationalization of Multiple Risk Assessments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Management and Storage Section -->
+        <section id="information-management" class="information-management section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Implementation</h2>
+                <div class="section-content">
+                    <p>We work with our customers to implement cybersecurity portfolios, programs, and projects of various size and scope. A CISO entrusts us with implementing GRC programs (from policy design to education), hiring talent, deploying cybersecurity products (SaaS/On-Prem), as well as cyber operations programs, such as Incident Response & Management, Vulnerability Management, etc.</p>
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>Steady-state Cyber Programs.</li>
+                                <li><i class="fas fa-check-circle"></i>Installed cyber products with proper configuration.</li>
+                            </ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-chart-line"></i>Cyber Program/Project as per prioritized roadmap</li>
+                                <li><i class="fas fa-database"></i>Cyber Project Implementation</li>
+                                <li><i class="fas fa-network-wired"></i>Cyber Security Product Implementation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Remediation -->
+        <section id="data-analytics" class="data-analytics section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Remediation</h2>
+                <div class="section-content">
+                    <p>Customers ask DivIHN to provide the remedies, mainly based on the recommendations and roadmaps delivered during the assessments. Remediations largely focus on filling the gaps in existing programs/practices, however, they could morph into a full-scale implementation as well, based on the nature of the recommendation from the cyber assessment.</p>
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Fine-tuned cyber programs /products – with gaps remedied.</li>
+                                <li><i class="fas fa-check-circle"></i> Increase effectiveness of cybersecurity posture and goals.</li>
+                            </ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-shield-alt"></i>Program Remediation</li>
+                                <li><i class="fas fa-brain"></i>Product (SaaS)/Configuration Remediation (e.g., Firewall)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Operations -->
+        <section id="operations" class="data-analytics section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Operations</h2>
+                <div class="section-content">
+                    <p>Cybersecurity Operations include a combination of active or passive defense in either continuous or intermittent manner.</p>
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>First-responder treatment of cyberattacks</li>
+                                <li><i class="fas fa-check-circle"></i>Stronger cyber-posture through integration of various cybersecurity technologies like SOC, SIEM, XDR, AI/ML, SOAR, etc.</li>
+                            </ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-shield-alt"></i>Security Operations Center (SOC)</li>
+                                <li><i class="fas fa-brain"></i>Penetration Testing: Network, Application, Website, IoT etc.</li>
+                                <li><i class="fas fa-brain"></i>Red/Blue/Purple Teaming</li>
+                                <li><i class="fas fa-brain"></i>Managed Security Services Provide (MSSP)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Special Projects -->
+        <section id="special-projects" class="data-analytics section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Special Projects</h2>
+                <div class="section-content">
+                    <p>A Special Project is a service that does not conform to any of the standard services, namely, Advisory, Assessment, Implementation, Remediation, and Operations.  Key examples include Cyber PMO (Project Management Office), BCP-DR, M&A, Innovation, Skill-Development, etc.</p>
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>Fit-for-purpose Deliverables based on the scope of the Special Project, e.g., M&A</li>
+                                <li><i class="fas fa-check-circle"></i>Cyber-innovations within CISO Team</li>
+                            </ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-shield-alt"></i>Mergers & Acquisitions-related (M&A) Cybersecurity Services</li>
+                                <li><i class="fas fa-brain"></i>Exploratory and Confirmatory Due Diligence</li>
+                                <li><i class="fas fa-brain"></i>Cyber-products integration & separation (for Divestitures)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differentiator Summary Section -->
+        <section id="differentiator-summary" class="differentiator-summary section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Differentiator Summary</h2>
+                <div class="section-content">
+                    <div class="diff-card">
+                        <p>We deliver customer-centric strategies tailored to business needs, priorities, and budgets, ensuring strong cybersecurity and risk resilience. Our team's expertise and innovative approach drive optimal delivery strategies, aligning with industry standards, best practices, and credible research to create effective methodologies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+
+
+
+
+
+    
 
     <footer>
         <div class="footer-content">
@@ -21,56 +330,154 @@
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="../services/digitalization.html">Digitalization</a></li>
-                        <li><a href="../services/business-technology-transformation.html">Business Technology Transformation</a></li>
-                        <li><a href="../services/cybersecurity-services.html">Cybersecurity Services</a></li>
-                        <li><a href="../services/operations-management.html">Operations Management</a></li>
-                        <li><a href="../services/talent-mobilization.html">Talent Mobilization</a></li>
+                        <li><a href="Digitalization.html">Digitalization</a></li>
+                        <li><a href="Business_Technology.html">Business Transformation</a></li>
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="Operations_Management.html">Operations Management</a></li>
+                        <li><a href="Talent_Mobilization.html">Talent Mobilization</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Specializations</h4>
+                    <ul>
+                        <li><a href="../specalizations/Enterprise_Architecture.html">Enterprise Architecture</a></li>
+                        <li><a href="../specalizations/Salesforce.html">Salesforce</a></li>
+                        <li><a href="../specalizations/Cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="../specalizations/Data_Analytics.html">Data Analytics with AI / ML</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="../contact-us.html">Contact</a></li>
+                        <li><a href="../what-we-do.html">What we do</a></li>
+                        <li><a href="../who-we-serve.html">Who we serve</a></li>
+                        <li><a href="../Why-Synapse-AI.html">Why Synapse AI</a></li>
+                        <li><a href="../contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Connect</h4>
                     <div class="social-icons">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="<a href="https://www.linkedin.com/company/synapse4ai" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Prajay AI Labs. All rights reserved.</p>
-            <ul class="legal-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
+            <p>© 2025 Synapse AI. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Include AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
+     <script>
         document.addEventListener('DOMContentLoaded', function() {
+             // Initialize AOS for animations.  Use 'data-aos' attribute in HTML.
             AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
+                duration: 800,       // Animation duration
+                easing: 'ease-in-out', // Easing function
+                once: true,         // Animate only once
+                offset: 100        // Offset (in px) from the original trigger point
             });
-
+            
+            // Mobile menu toggle (for smaller screens)
             const menuToggle = document.querySelector('.mobile-menu-toggle');
             const navList = document.querySelector('.nav-list');
-
-            if (menuToggle) {
+            if (menuToggle && navList) {
                 menuToggle.addEventListener('click', () => {
-                    navList.classList.toggle('active');
+                    if (navList) {
+                        navList.classList.toggle('active');
+                    }
                 });
+            }
+
+            // Smooth scrolling and sticky header logic
+            let isScrolling = false;
+
+            function smoothScroll(target) {
+              const targetElement = document.querySelector(target);
+              const servicesNav = document.getElementById('services-nav');
+              if (targetElement && servicesNav) {
+                const headerOffset = servicesNav.offsetHeight;
+                const elementPosition = targetElement.offsetTop;
+                const offsetPosition = elementPosition - headerOffset;
+
+                // Only if window > 768px, then smooth scrolling.
+                if (window.innerWidth > 768) {
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+                else {
+                   // For smaller screens, include main header offset
+                   const mainHeader = document.getElementById('main-header');
+                   if (mainHeader) {
+                       const mainHeaderOffset = mainHeader.offsetHeight;
+                       const smallScreenOffsetPosition = elementPosition - headerOffset - mainHeaderOffset;
+                       window.scrollTo({
+                          top: smallScreenOffsetPosition,
+                          behavior: "smooth"
+                       });
+                   }
+                }
+              }
+            }
+
+            const serviceLinks = document.querySelectorAll('.service-link');
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();  // Prevent default anchor behavior
+                    const target = this.getAttribute('href');
+                    smoothScroll(target); // Call smooth scroll function
+                });
+            });
+
+            // Function to set the active link based on scroll position
+            function setActiveLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const servicesNav = document.getElementById('services-nav');
+                if (servicesNav) {
+                    let scrollPosition = window.scrollY + servicesNav.offsetHeight + 10;  // Add a small buffer
+
+                    sections.forEach(section => {
+                        // Check if the current section is in view
+                        if (section.offsetTop <= scrollPosition &&
+                            (section.offsetTop + section.offsetHeight) > scrollPosition)
+                           {
+                            serviceLinks.forEach(link => {
+                                link.classList.remove('active');
+                                // Add 'active' class to the corresponding link
+                                if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
+                                    link.classList.add('active');
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+            // Sticky header functionality.  Adds 'sticky' class when scrolled.
+            const header = document.getElementById('services-nav');
+            if (header) {
+                let sticky = header.offsetTop;
+
+                function handleScroll() {
+                  if (!isScrolling) {  // Regular scroll
+                    if (window.pageYOffset > sticky) {
+                      header.classList.add("sticky");
+                      document.body.style.paddingTop = header.offsetHeight + 'px'; // Prevent content jump
+                    } else {
+                      header.classList.remove("sticky");
+                       document.body.style.paddingTop = '0px';
+                    }
+                  }
+
+                    setActiveLink(); // Update active link on scroll
+                }
+
+                window.addEventListener('scroll', handleScroll);
             }
         });
     </script>

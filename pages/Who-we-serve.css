@@ -176,7 +176,7 @@ p {
 /* Style footer with dark background and centered text */
 footer {
   background-color: var(--secondary-color);
-  padding: 20px 0;
+  padding: 20px 20px; /* Adjusted padding to match Contact Us page */
   text-align: center;
   border-top: 1px solid var(--border-color); /* Subtle separation */
   box-shadow: 0 -2px 12px var(--shadow-light); /* Shadow for depth */
@@ -186,9 +186,20 @@ footer {
 /* Style footer text */
 footer p {
   margin: 0;
-  color: #fff;
+  color: #fff; /* White text */
   font-size: 0.9rem;
   font-family: var(--font-secondary);
+  transition: color var(--transition-normal); /* Smooth transition */
+}
+
+/* Change footer text color to yellow when clicked */
+footer p:active {
+  color: var(--primary-color); /* Yellow text */
+}
+
+/* Add hover effect for footer links */
+footer a:hover {
+  color: var(--primary-color); /* Yellow text */
 }
 
 /* --- Who-we-serve.css (Page-specific Styles) --- */
@@ -198,6 +209,7 @@ main {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;                     /* Center content */
+  padding-top: 80px;  /* ADD THIS LINE.  Adjust as needed. */
 }
 
 /* --- Hero Section --- */
@@ -252,24 +264,26 @@ main {
   box-shadow: 0 4px 20px var(--shadow-light);
 }
 
+/* --- Page Navigation --- */
+
 /* --- Page Navigation (Sticky) --- */
 /* Style sticky navigation with gradient background */
 .page-nav {
   background: linear-gradient(to bottom, #f8f9fa, #f0f2f5); /* Subtle gradient */
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);  /* Use CSS variable */
   padding: 0;
   position: sticky;                   /* Sticks below header */
-  top: 0;
-  z-index: 50;                        /* Above main content */
+  top: 0;  /* Stick to the very top. Important! */
+  z-index: 999;                        /* Above main content, below header */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Light shadow */
 }
 
 /* Center navigation container */
-.nav-container {
+ .nav-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-}
+} 
 
 /* Flex layout for navigation list */
 .page-nav-list {
@@ -278,29 +292,32 @@ main {
   margin: 0;
   display: flex;
   justify-content: center;            /* Center links */
-  height: 60px;
+  height: 60px; /* Consistent height */
   background-color: var(--secondary-color); /* Dark background */
+  /* Remove redundant position, top, left, width, z-index */
+  flex-wrap: wrap; /* Add flex-wrap for responsiveness */
+
 }
 
 /* Style nav list items */
 .page-nav-list li {
-  margin: 0;
-  position: relative;
+  margin: 0; /* Reset default margins */
+  position: relative;  /* For the underline effect */
 }
 
 /* Style page navigation links with hover effect */
 .page-nav-link {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--bg-light); /* Use CSS variable */
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
   padding: 0 1.5rem;
-  display: flex;
+  display: flex; /* Use flexbox for vertical centering */
   align-items: center;
-  height: 100%;
+  height: 100%; /* Fill the parent's height */
   transition: all 0.25s ease;
-  position: relative;
+  position: relative; /* Needed for the underline */
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); /* Subtle text shadow */
 }
 
@@ -312,15 +329,15 @@ main {
   left: 50%;
   width: 0;
   height: 3px;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color); /* Use CSS variable */
   transition: all 0.25s ease;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Center the underline */
 }
 
 /* Expand underline on hover or active state */
 .page-nav-link:hover,
 .page-nav-link.active {
-  color: var(--primary-color);
+  color: var(--primary-color); /* Use CSS variable */
 }
 
 /* Animate underline width */
@@ -336,7 +353,150 @@ main {
 
 /* Add borders between nav items */
 .page-nav-list li + li {
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.2); /*  Subtle border */
+}
+
+/* --- Responsive Adjustments (Media Queries) --- */
+@media (max-width: 768px) {
+  .page-nav-list {
+    flex-direction: column; /* Stack links vertically */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .page-nav-list li {
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+  }
+
+  .page-nav-list li + li {
+      border-left: none;  /*Remove the left border*/
+      border-top: 1px solid rgba(255, 255, 255, 0.2); /* Add top border */
+  }
+    .page-nav-link {
+        padding: 0.75rem 1.5rem; /* Adjust padding for smaller screens */
+    }
+
+  /* Hide page navigation for mobile view */
+  .page-nav {
+    display: none;
+  }
+
+  /* Mobile menu styling */
+  .nav-list {
+    display: flex; /* Change to flex for desktop view */
+    flex-direction: row; /* Stack horizontally */
+    width: auto; /* Auto width */
+    background-color: transparent; /* Transparent background */
+    position: static; /* Static position */
+    top: auto; /* Remove top positioning */
+    left: auto; /* Remove left positioning */
+    box-shadow: none; /* Remove shadow */
+    z-index: auto; /* Default z-index */
+  }
+
+  /* Remove mobile menu toggle */
+  .mobile-menu-toggle {
+    display: none; /* Hide toggle button */
+  }
+
+  /* Remove borders between nav items in mobile view */
+  .page-nav-list li + li {
+    border-left: none;
+  }
+
+  /* Hide page navigation for mobile view */
+  .page-nav {
+    display: none;
+  }
+
+  .header-container {
+    flex-direction: row; /* Keep horizontal layout */
+    padding: 15px 20px; /* Consistent padding */
+    align-items: center; /* Center alignment */
+    justify-content: space-between; /* Space between logo and menu */
+  }
+
+  .header-left {
+    width: auto; /* Let it take natural width */
+    justify-content: flex-start; /* Align to start */
+  }
+
+  /* Hamburger menu styling */
+  .mobile-menu-toggle {
+    display: block;
+    font-size: 1.3rem; /* Slightly smaller icon */
+    padding: 8px;
+    border-radius: 4px;
+    margin-left: 15px; /* Space from logo */
+    transition: background-color var(--transition-normal);
+  }
+
+  .mobile-menu-toggle:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+  }
+
+  /* Mobile navigation improvements */
+  .main-nav {
+    position: absolute;
+    top: 100%; /* Position below header */
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--bg-white);
+    box-shadow: 0 4px 10px var(--shadow-light);
+    padding: 0; /* Remove padding */
+    margin: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height var(--transition-normal);
+  }
+
+  .nav-list.active {
+    display: flex;
+    max-height: 300px; /* Enough height for menu items */
+    padding: 10px 0; /* Add padding when open */
+  }
+
+  .nav-list li {
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 20px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  /* Contact button in mobile */
+  .contact-button {
+    margin: 10px 20px; /* Add margin inside nav list */
+    width: calc(100% - 40px); /* Full width with margins */
+    justify-content: center; /* Center button text */
+    padding: 6px 16px; /* Further reduced padding */
+    font-size: 0.75rem; /* Further reduced font size */
+  }
+}
+
+/* Laptop Breakpoint (up to 1024px) */
+@media (max-width: 1024px) {
+  .page-nav {
+    position: fixed; /* Fix the navigation header */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
 }
 
 /* --- Section Styles --- */
@@ -514,46 +674,7 @@ main {
 /* --- Learn More Button --- */
 /* Style learn-more button with hover animation */
 .learn-more-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: var(--primary-color);
-  color: var(--bg-white);
-  text-decoration: none;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  box-shadow: 0 5px 15px rgba(var(--primary-color-rgb), 0.3); /* Subtle shadow */
-  border: none;
-}
-
-/* Animated background overlay for button */
-.learn-more-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: var(--secondary-color);
-  transition: width 0.3s ease;
-  z-index: -1;
-}
-
-/* Lift button and enhance shadow on hover */
-.learn-more-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.4);
-  color: var(--bg-white);
-}
-
-/* Expand background overlay on hover */
-.learn-more-btn:hover::before {
-  width: 100%;
+  display: none; /* Hide Learn More buttons */
 }
 
 /* --- Responsive Adjustments --- */
@@ -662,51 +783,468 @@ main {
 
   /* Mobile menu styling */
   .nav-list {
-      display: none;                  /* Hidden by default */
-      flex-direction: column;         /* Stack vertically */
-      width: 100%;                    /* Full width */
-      background-color: var(--bg-white); /* White background */
-      position: absolute;             /* Position below header */
-      top: 60px;                      /* Below header height */
-      left: 0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-      z-index: 100;                   /* Above other content */
+    display: flex; /* Change to flex for desktop view */
+    flex-direction: row; /* Stack horizontally */
+    width: auto; /* Auto width */
+    background-color: transparent; /* Transparent background */
+    position: static; /* Static position */
+    top: auto; /* Remove top positioning */
+    left: auto; /* Remove left positioning */
+    box-shadow: none; /* Remove shadow */
+    z-index: auto; /* Default z-index */
   }
 
-  /* Show nav list when active */
-  .nav-list.active {
-      display: flex;
-  }
-
-  /* Style mobile nav items */
-  .nav-list li {
-      text-align: center;
-      padding: 1rem;
-      border-bottom: 1px solid var(--border-color); /* Separator */
-  }
-
-  /* Remove border from last item */
-  .nav-list li:last-child {
-      border-bottom: none;
-  }
-
-  /* Show mobile menu toggle */
+  /* Remove mobile menu toggle */
   .mobile-menu-toggle {
-      display: block;
-  }
-
-  /* Reduce footer padding */
-  footer {
-      padding: 15px 0;
-  }
-
-  /* Reduce footer text size */
-  footer p {
-      font-size: 0.8rem;
+    display: none; /* Hide toggle button */
   }
 
   /* Remove borders between nav items in mobile view */
   .page-nav-list li + li {
-      border-left: none;
+    border-left: none;
   }
+
+  /* Hide page navigation for mobile view */
+  .page-nav {
+    display: none;
+  }
+
+  .header-container {
+    flex-direction: row; /* Keep horizontal layout */
+    padding: 15px 20px; /* Consistent padding */
+    align-items: center; /* Center alignment */
+    justify-content: space-between; /* Space between logo and menu */
+  }
+
+  .header-left {
+    width: auto; /* Let it take natural width */
+    justify-content: flex-start; /* Align to start */
+  }
+
+  /* Hamburger menu styling */
+  .mobile-menu-toggle {
+    display: block;
+    font-size: 1.3rem; /* Slightly smaller icon */
+    padding: 8px;
+    border-radius: 4px;
+    margin-left: 15px; /* Space from logo */
+    transition: background-color var(--transition-normal);
+  }
+
+  .mobile-menu-toggle:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+  }
+
+  /* Mobile navigation improvements */
+  .main-nav {
+    position: absolute;
+    top: 100%; /* Position below header */
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--bg-white);
+    box-shadow: 0 4px 10px var(--shadow-light);
+    padding: 0; /* Remove padding */
+    margin: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height var(--transition-normal);
+  }
+
+  .nav-list.active {
+    display: flex;
+    max-height: 300px; /* Enough height for menu items */
+    padding: 10px 0; /* Add padding when open */
+  }
+
+  .nav-list li {
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 20px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  /* Contact button in mobile */
+  .contact-button {
+    margin: 10px 20px; /* Add margin inside nav list */
+    width: calc(100% - 40px); /* Full width with margins */
+    justify-content: center; /* Center button text */
+    padding: 6px 16px; /* Further reduced padding */
+    font-size: 0.75rem; /* Further reduced font size */
+  }
+}
+
+/* Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 10px var(--shadow-light);
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: color var(--transition-normal);
+    display: none;
+    margin-right: 15px;
+}
+
+.mobile-menu-toggle:hover {
+    color: var(--primary-color);
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    font-weight: 700;
+    transition: color var(--transition-normal);
+    white-space: nowrap;
+}
+
+.nav-link.home-link {
+    color: var(--text-dark);
+    font-weight: 700;
+    transition: color var(--transition-normal);
+    white-space: nowrap;
+}
+
+.nav-link.home-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.contact-button {
+    position: relative;
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: transparent;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border: 2px solid var(--primary-color);
+    overflow: hidden;
+    z-index: 1;
+    display: inline-block;
+    font-family: var(--font-secondary);
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-button span {
+    position: relative;
+    z-index: 2;
+    transition: color var(--transition-normal);
+}
+
+.contact-button:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+
+.contact-button:hover span {
+    color: white;
+}
+
+.button-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+.contact-button:hover .button-background {
+    transform: translateY(0);
+}
+
+/* Sticky Header */
+.sticky-header {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Header Adjustments */
+    .header-container {
+        flex-direction: row; /* Keep horizontal layout */
+        padding: 15px 20px; /* Consistent padding */
+        align-items: center; /* Center alignment */
+        justify-content: space-between; /* Space between logo and menu */
+    }
+
+    .header-left {
+        width: auto; /* Let it take natural width */
+        justify-content: flex-start; /* Align to start */
+    }
+
+    /* Hamburger menu styling */
+    .mobile-menu-toggle {
+        display: block;
+        font-size: 1.3rem; /* Slightly smaller icon */
+        padding: 8px;
+        border-radius: 4px;
+        margin-left: 15px; /* Space from logo */
+        transition: background-color var(--transition-normal);
+    }
+
+    .mobile-menu-toggle:hover {
+        background-color: rgba(var(--primary-color-rgb), 0.1);
+    }
+
+    /* Mobile navigation improvements */
+    .main-nav {
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        z-index: 1001;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--bg-white);
+        box-shadow: 0 4px 10px var(--shadow-light);
+        padding: 0; /* Remove padding */
+        margin: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height var(--transition-normal);
+    }
+
+    .nav-list.active {
+        display: flex;
+        max-height: 300px; /* Enough height for menu items */
+        padding: 10px 0; /* Add padding when open */
+    }
+
+    .nav-list li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-list li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 12px 20px;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    /* Contact button in mobile */
+    .contact-button {
+        margin: 10px 20px; /* Add margin inside nav list */
+        width: calc(100% - 40px); /* Full width with margins */
+        justify-content: center; /* Center button text */
+        padding: 6px 16px; /* Further reduced padding */
+        font-size: 0.75rem; /* Further reduced font size */
+    }
+
+    /* Slider Adjustments */
+    .homepage-slider {
+        height: auto;
+    }
+
+    .slide {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .slide-content, .slide-image {
+        flex: 0 0 100%;
+        padding: 40px 20px;
+    }
+
+    .slide-image {
+        height: 300px;
+    }
+
+    .slide-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .slide-content h1::after {
+        margin: 0 auto;
+        margin-bottom: -5px;
+    }
+
+    .view-success-story-button {
+        margin: 10px auto;
+        margin-top: 25px;
+    }
+
+    .promise-content h2 {
+        font-size: 2rem;
+    }
+
+    .what-we-do-content h2 {
+        font-size: 2rem;
+    }
+
+    .service-cards, .specialization-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .slider-controls {
+        bottom: 5px;
+    }
+
+    /* Footer Adjustments */
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-links {
+        width: 100%;
+        margin-top: 20px;
+        justify-content: space-around;
+    }
+
+    .footer-column {
+        min-width: 140px;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .header-logo {
+        width: 35px; /* Slightly smaller logo */
+    }
+
+    .logo-text {
+        font-size: 1.3rem; /* Smaller text */
+    }
+
+    .mobile-menu-toggle {
+        margin-left: 10px; /* Less space in smaller screens */
+    }
+    .logo-text {
+        font-size: 1.1rem; /* Further reduce font size for iPhone X */
+    }
+     /* Footer Adjustments */
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .legal-links {
+        justify-content: center;
+    }
+    /* Adjust font sizes for smaller screens */
+    .slide-content h1 {
+        font-size: 2rem; /* Even smaller */
+    }
+
+    .promise-content h2, .what-we-do-content h2 {
+        font-size: 1.8rem; /* Slightly smaller */
+    }
+
+    .positive-difference h2{
+      font-size: 1.8rem;
+    }
+
+    .card-content h3 {
+        font-size: 1.3rem; /* Smaller card headings */
+    }
+
+    .footer-column h4 {
+      font-size: 1.1rem;
+    }
 }

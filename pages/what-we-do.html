@@ -11,7 +11,7 @@
     <!-- Include Normalize.css to reset browser styles consistently -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Link main stylesheet for general styling -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <!-- Link page-specific stylesheet for "What We Do" section -->
     <link rel="stylesheet" href="what-we-do.css">
     <!-- Include Font Awesome for icons -->
@@ -77,6 +77,9 @@
             .swiper-container {
                 padding: 0 35px;
             }
+            .header-right {
+                justify-content: flex-end; /* Align items to the right */
+            }
         }
 
         /* Increase space below pagination dots */
@@ -86,6 +89,54 @@
     </style>
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo and Brand Name -->
+            <div class="header-left">
+                <a href="../index.html" class="logo-link">
+                    <img src="../assests/Synapse_logo.PNG" alt="Synapse Logo" class="header-logo">
+                    <span class="logo-text">Synapse AI</span>
+                </a>
+            </div>
+
+            <!-- Header Right Section (Navigation, Contact and Search) -->
+            <div class="header-right">
+                <!-- Main Navigation -->
+                <nav class="main-nav">
+                    <!-- Mobile Menu Toggle Button (for smaller screens) -->
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <!-- Navigation Links -->
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link home-link"><span>Home</span></a></li>
+                        <li><a href="../pages/what-we-do.html" class="nav-link"><span>What we do</span></a></li>
+                        <li><a href="../pages/who-we-serve.html" class="nav-link"><span>Who we serve</span></a></li>
+                        <li><a href="../pages/Why-Synapse-AI.html" class="nav-link"><span>Why Synapse AI</span></a></li>
+                        <!-- Removed Perspectives and Government links -->
+                    </ul>
+                </nav>
+                <!-- Wrapper for contact button -->
+                <div class="contact-button-wrapper">
+                    <a href="../pages/contact-us.html" class="contact-button">
+                        <span>Contact Us</span>
+                        <div class="button-background"></div>  <!--  Decorative element -->
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Element -->
+        <div class="mobile-menu">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link home-link"><span>Home</span></a></li>
+                <li><a href="../pages/what-we-do.html" class="nav-link"><span>What we do</span></a></li>
+                <li><a href="../pages/who-we-serve.html" class="nav-link"><span>Who we serve</span></a></li>
+                <li><a href="../pages/Why-Synapse-AI.html" class="nav-link"><span>Why Synapse AI</span></a></li>
+            </ul>
+        </div>
+    </header>
     <!-- Main content wrapper -->
     <main>
         <!-- Hero section with introductory content -->
@@ -93,8 +144,7 @@
             <div class="container">
                 <h1 class="hero-title">What We Do</h1>
                 <p class="hero-subtitle">
-                    Empowering businesses with cutting-edge AI solutions and strategic consulting. We transform challenges into opportunities.
-                </p>
+                    We empower businesses with innovative AI solutions and expert consulting, transforming challenges into growth opportunities.</p>
                 <!-- Button container for side-by-side CTAs -->
                 <div class="button-container">
                     <a href="#our-services" class="cta-button">Explore Our Services</a>
@@ -116,7 +166,7 @@
                         <div class="service-icon"><i class="fas fa-digital-tachograph"></i></div>
                         <h3 class="service-title">Digitalization</h3>
                         <p class="service-description">
-                            Streamline your operations with our digital transformation expertise. We help you embrace automation, cloud solutions, and data-driven insights.
+                            Convert your legacy systems into modern, efficient digital solutions for enhanced performance and agility.
                         </p>
                         <a href="services/Digitalization.html" class="service-link">Learn More</a>
                     </div>
@@ -125,7 +175,7 @@
                         <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
                         <h3 class="service-title">Business Technology Transformation</h3>
                         <p class="service-description">
-                            Modernize your IT infrastructure and align it with your business goals. We provide strategic guidance and implementation support.
+                            Ensure seamless alignment of technology with your business goals to drive growth and innovation.
                         </p>
                         <a href="services/Business_Technology.html" class="service-link">Learn More</a>
                     </div>
@@ -134,7 +184,7 @@
                         <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
                         <h3 class="service-title">Cybersecurity Services</h3>
                         <p class="service-description">
-                            Protect your valuable data and infrastructure from evolving cyber threats. Our comprehensive security solutions provide peace of mind.
+                            Safeguard your digital assets against emerging and evolving threats with robust protection strategies.
                         </p>
                         <a href="services/cybersecurity.html" class="service-link">Learn More</a>
                     </div>
@@ -143,7 +193,7 @@
                         <div class="service-icon"><i class="fas fa-cogs"></i></div>
                         <h3 class="service-title">Operations Management</h3>
                         <p class="service-description">
-                            Optimize your workflows and improve efficiency. We help you implement best practices and leverage technology for operational excellence.
+                            Enhance operational efficiency and boost productivity through streamlined processes and effective management strategies.
                         </p>
                         <a href="services/Operations_Management.html" class="service-link">Learn More</a>
                     </div>
@@ -152,7 +202,7 @@
                         <div class="service-icon"><i class="fas fa-users"></i></div>
                         <h3 class="service-title">Talent Mobilization</h3>
                         <p class="service-description">
-                            Find and onboard the right talent to drive your AI initiatives. We connect you with skilled professionals who can make a difference.
+                            Inspire and empower your workforce to drive maximum impact and achieve organizational success.
                         </p>
                         <a href="services/Talent_Mobilization.html" class="service-link">Learn More</a>
                     </div>
@@ -172,58 +222,31 @@
                     <div class="swiper-slide specialization-card">
                         <div class="specialization-icon"><i class="fas fa-shield-alt"></i></div>
                         <h3 class="specialization-title">Cybersecurity</h3>
-                        <p class="specialization-description">Expertise in securing your digital assets.</p>
+                        <p class="specialization-description">Implement advanced protection strategies and robust security architecture to safeguard your digital environment.</p>
                         <a href="specalizations/Cybersecurity.html" class="specialization-link">Learn More</a>
+                        
                     </div>
                     <!-- Specialization Slide: Data Analytics -->
                     <div class="swiper-slide specialization-card">
                         <div class="specialization-icon"><i class="fas fa-chart-line"></i></div>
                         <h3 class="specialization-title">Data Analytics with AI/ML</h3>
-                        <p class="specialization-description">Leverage data for actionable insights.</p>
+                        <p class="specialization-description">Leverage advanced analytics and machine learning to uncover valuable insights and drive data-informed decisions.</p>
                         <a href="specalizations/Data_Analytics.html" class="specialization-link">Learn More</a>
                     </div>
-                    <!-- Specialization Slide: Microsoft -->
-                    <div class="swiper-slide specialization-card">
-                        <div class="specialization-icon"><i class="fab fa-microsoft"></i></div>
-                        <h3 class="specialization-title">Microsoft</h3>
-                        <p class="specialization-description">Microsoft solutions and integration.</p>
-                        <a href="specalizations/Enterprise_Architecture.html" class="specialization-link">Learn More</a>
-                    </div>
+
                     <!-- Specialization Slide: Salesforce -->
                     <div class="swiper-slide specialization-card">
                         <div class="specialization-icon"><i class="fab fa-salesforce"></i></div>
                         <h3 class="specialization-title">Salesforce</h3>
-                        <p class="specialization-description">Salesforce implementation and customization.</p>
-                        <a href="specalizations/Enterprise_Architecture.html" class="specialization-link">Learn More</a>
+                        <p class="specialization-description">Tailor and implement Salesforce to meet the unique needs of your business, driving efficiency and growth.</p>
+                        <a href="specalizations/Salesforce.html" class="specialization-link">Learn More</a>
                     </div>
                     <!-- Specialization Slide: Enterprise Architecture -->
                     <div class="swiper-slide specialization-card">
                         <div class="specialization-icon"><i class="fas fa-building"></i></div>
                         <h3 class="specialization-title">Enterprise Architecture</h3>
-                        <p class="specialization-description">Designing robust and scalable IT architectures.</p>
+                        <p class="specialization-description">Develop robust and scalable system architectures that ensure resilience and future growth.</p>
                         <a href="specalizations/Enterprise_Architecture.html" class="specialization-link">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials section with Swiper carousel -->
-        <section class="testimonials-section container" data-aos="fade-up">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <div class="swiper-container testimonials-slider">
-                <!-- Navigation arrows -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-wrapper">
-                    <!-- Testimonial Slide 1 -->
-                    <div class="swiper-slide testimonial-card">
-                        <p class="testimonial-text">"Synapse AI Labs helped us completely transform our digital strategy. Their expertise and guidance were invaluable."</p>
-                        <p class="testimonial-author">- John Smith, CEO, Company X</p>
-                    </div>
-                    <!-- Testimonial Slide 2 -->
-                    <div class="swiper-slide testimonial-card">
-                        <p class="testimonial-text">"The team at Synapse AI is incredibly knowledgeable and responsive. They delivered exceptional results on our cybersecurity project."</p>
-                        <p class="testimonial-author">- Jane Doe, CTO, Company Y</p>
                     </div>
                 </div>
             </div>
@@ -232,8 +255,8 @@
         <!-- Call-to-action section -->
         <section class="cta-section container" data-aos="fade-up">
             <h2 class="cta-title">Ready to Transform Your Business?</h2>
-            <p class="cta-text">Contact us today to discuss your needs and discover how Synapse AI Labs can help you achieve your goals.</p>
-            <a href="contact-us.html" class="cta-button">Contact us</a>
+            <p class="cta-text">Get in touch with Synapse AI to explore tailored strategies designed to accelerate your success.</p>
+            <a href="../pages/contact-us.html" class="cta-button">Contact us</a>
         </section>
     </main>
 
@@ -245,10 +268,12 @@
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#">Digitalization</a></li>
-                        <li><a href="#">Business Transformation</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">Operations Management</a></li>
+                        <li><a href="services/Digitalization.html">Digitalization</a></li>
+                        <li><a href="services/Business_Technology.html">Business Transformation</a></li>
+                        <li><a href="services/cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="services/Operations_Management.html">Operations Management</a></li>
+                        <li><a href="services/Talent_Mobilization.html">Talent Mobilization</a></li>
+
                     </ul>
                 </div>
 
@@ -256,11 +281,10 @@
                 <div class="footer-column">
                     <h4>Specializations</h4>
                     <ul>
-                        <li><a href="#">Enterprise Architecture</a></li>
-                        <li><a href="#">Salesforce</a></li>
-                        <li><a href="#">Microsoft</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">Data Analytics with AI / ML</a></li>
+                        <li><a href="specalizations/Enterprise_Architecture.html">Enterprise Architecture</a></li>
+                        <li><a href="specalizations/Salesforce.html">Salesforce</a></li>
+                        <li><a href="specalizations/Cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="specalizations/Data_Analytics.html">Data Analytics with AI / ML</a></li>
                     </ul>
                 </div>
 
@@ -268,10 +292,10 @@
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="pages/what-we-do.html">What we do</a></li>
-                        <li><a href="pages/who-we-serve.html">Who we serve</a></li>
-                        <li><a href="pages/Why-Synapse-AI.html">Why Synapse AI</a></li>
-                        <li><a href="pages/contact-us.html">Contact Us</a></li>
+                        <li><a href="../pages/what-we-do.html">What we do</a></li>
+                        <li><a href="../pages/who-we-serve.html">Who we serve</a></li>
+                        <li><a href="../pages/Why-Synapse-AI.html">Why Synapse AI</a></li>
+                        <li><a href="../pages/contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -311,9 +335,12 @@
             // Mobile menu toggle functionality
             const menuToggle = document.querySelector('.mobile-menu-toggle');
             const navList = document.querySelector('.nav-list');
+            const mobileMenu = document.querySelector('.mobile-menu');
             if (menuToggle) {
                 menuToggle.addEventListener('click', () => {
                     navList.classList.toggle('active');
+                    menuToggle.classList.toggle('active'); // Toggle active class on menuToggle
+                    mobileMenu.classList.toggle('active'); // Toggle the mobile menu visibility
                 });
             }
 
@@ -373,24 +400,6 @@
                 }
             });
 
-            // Search box toggle functionality
-            const searchIcon = document.querySelector('.search-icon');
-            const searchBox = document.querySelector('.search-box');
-            const searchInput = document.querySelector('.search-input');
-            searchIcon.addEventListener('click', () => {
-                searchBox.classList.toggle('active');
-                if (searchBox.classList.contains('active')) {
-                    searchInput.focus(); // Focus input when opened
-                }
-            });
-
-            // Close search box when clicking outside
-            document.addEventListener('click', (event) => {
-                if (!searchBox.contains(event.target) && !searchIcon.contains(event.target)) {
-                    searchBox.classList.remove('active');
-                }
-            });
-
             // Smooth scrolling for anchor links with offset
             const offset = 80; // Adjust for fixed header height
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -404,6 +413,20 @@
                             behavior: 'smooth'
                         });
                     }
+                });
+            });
+
+            // Set pointer-events: auto on swiper-wrapper and swiper-slide to ensure links are clickable
+            // Modify the existing code at the end of the script
+            const swiperSlides = document.querySelectorAll('.swiper-slide');
+            swiperSlides.forEach(slide => {
+                slide.style.pointerEvents = 'auto';
+                // Make sure all links inside the slide are clickable
+                const links = slide.querySelectorAll('a');
+                links.forEach(link => {
+                    link.style.pointerEvents = 'auto';
+                    link.style.position = 'relative';
+                    link.style.zIndex = '5';
                 });
             });
         });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digitalization - Prajay AI Labs</title>
+    <title>Digitalization - Synapse AI</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="digitalization.css">
     <!-- Include Font Awesome for icons -->
@@ -11,12 +11,254 @@
     <!-- Include AOS (Animate On Scroll) library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="../../script.js"></script>
+    <style>
+        /* Style for Digital Strategy & Transformation text */
+        .digital-strategy-text h1 {
+          color: #2c3e50; /* Set font color to #2c3e50 */
+          white-space: nowrap; /* Ensure the title appears in a single line */
+        }
+
+        /* Style for all headings */
+        h2, h3, .footer-column h4 {
+          color: #f39c12; /* Set font color to #2c3e50 */
+          cursor: pointer; /* Make headings look clickable */
+          transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+      
+        /* Change heading color on click */
+        h2:active, h3:active, .footer-column h4:active{
+          color: #f39c12;
+        }
+
+        /* Color for symbols/icons */
+        .outcomes ul li i, .services ul li i {
+          color: #f39c12;
+        }
+
+        /* Fixed header styling */
+        #main-header {
+          display: none; /* Hide the main header */
+        }
+
+        #main-header .logo-text,
+        #main-header .nav-link,
+        #main-header .mobile-menu-toggle {
+            color: #ffffff;
+        }
+
+       #main-header .contact-button {
+           color: #ffffff;
+           border: 2px solid #ffffff;
+       }
+      
+      #main-header .contact-button:hover {
+         background-color: #ffffff;
+         color: #2c3e50
+      }
+      
+      #main-header .contact-button:hover span {
+          color: #2c3e50
+      }
+
+        .services-header {
+           top: 0;
+           background-color: #2c3e50; /* Set initial background color */
+        }
+
+        .services-header .service-link {
+           color: #ffffff; /* Set text color to white */
+        }
+        
+        body{
+          scroll-behavior: smooth;
+        }
+
+        /* Add more specific styles if needed to override any conflicting rules */
+
+        .back-button {
+            position: sticky; /* Make the back button sticky */
+            top: 10px; /* Position it 10px from the top */
+            z-index: 1000; /* Ensure it stays on top */
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Header section removed -->
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
 
-    <main>
-        <!-- Page-specific content goes here -->
+    <!-- Main Header -->
+    <header id="main-header">
+        <div class="logo-text">Synapse AI</div>
+        <nav class="nav-list">
+            <!-- ...existing code... -->
+        </nav>
+        <div class="mobile-menu-toggle">☰</div>
+    </header>
+
+    <!-- Services Sticky Header -->
+    <nav class="services-header" id="services-nav">
+        <div class="services-container">
+            <a href="#overview" class="service-link">Overview</a>
+            <a href="#digital-strategy-alignment" class="service-link">Digital Strategy</a>
+            <a href="#process-integration" class="service-link">Process Integration</a>
+            <a href="#information-management" class="service-link">Information Management</a>
+            <a href="#data-analytics" class="service-link">Data Analytics</a>
+            <a href="#differentiator-summary" class="service-link">Summary</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="digital-strategy" data-aos="fade-up">
+        <div class="digital-strategy-content">
+            <div class="digital-strategy-text" data-aos="fade-up">
+                <h1>Digital Strategy <br><span>& Transformation</span></h1>
+                <p>We craft Digital Transformation strategies to maximize impact and value for your clients, employees, and shareholders.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content sections -->
+    <main class="content-wrapper">
+        <!-- Overview Section -->
+        <section id="overview" class="overview section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Overview</h2>
+                <div class="section-content">
+                    <p>Digitalization goes beyond the adoption of new technologies; it requires a fundamental shift in how organizations operate and deliver value. At its core, it’s about embracing a digital-first mindset and fostering a culture that aligns with innovation.  </p>
+                    <p>We partner with our clients to identify and address business technology challenges and opportunities, offering comprehensive guidance throughout their digital transformation journey.  </p>     
+                    <p>Our services are designed to help businesses harness the power of digital technologies to optimize operations, enhance customer experiences, and fuel growth. We collaborate closely with our clients to create tailored strategies and solutions that align with their unique objectives.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Strategy and Alignment Section -->
+        <section id="digital-strategy-alignment" class="digital-strategy-alignment section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Digital Strategy and Alignment</h2>
+                <div class="section-content">
+                    <p>Creating impactful and efficient digital solutions starts with deep insights and a flexible strategy. By aligning digital initiatives with overall business objectives, organizations can successfully navigate the ever-changing technology landscape.  </p>    
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Accelerated Digitalization: Maximize the potential of technology investments</li>
+                                <li><i class="fas fa-check-circle"></i> Improved Agility and Adaptability: Respond swiftly to market changes    </li>
+                                <li><i class="fas fa-check-circle"></i>Risk Management and Security: Safeguard assets and maintain trust    </li>
+                            </ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-cog"></i> Business Technology and Cloud Strategy</li>
+                                <li><i class="fas fa-lightbulb"></i> Solution Envisioning and Design</li>
+                                <li><i class="fas fa-user-tie"></i> Virtual CIO/CTO</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Integration and Automation Section -->
+        <section id="process-integration" class="process-integration section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Process Integration and Automation</h2>
+                <div class="section-content">
+                    <p>In today's fast-paced business environment, integrated and automated processes are vital for organizations to streamline operations, enhance efficiency, and maintain a competitive edge.                 </p>   
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>Increased Operational Efficiency: Enhance experiences across the board</li>
+                                <li><i class="fas fa-check-circle"></i> Reduced Errors and Omissions: Achieve maximum accuracy with minimal friction</li>
+                                <li><i class="fas fa-check-circle"></i>Reliability, Availability, Scalability: Ensure business continuity and enable growth</li>
+                            </ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-cog"></i> Business Technology and Cloud Strategy</li>
+                                <li><i class="fas fa-lightbulb"></i> Solution Envisioning and Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Management and Storage Section -->
+        <section id="information-management" class="information-management section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Information Management and Storage</h2>
+                <div class="section-content">
+                    <p>Data is a vital business asset, and when managed properly, it can empower strategic decision-making, improve operational efficiency, and create a competitive edge. Effective information management enables organizations to harness the full potential of their data, ensuring its protection while fostering growth and innovation.   </p>
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>Data-Driven Decision-Making: Minimize judgment bias and noise
+                                </li>
+                                <li><i class="fas fa-check-circle"></i> Enhanced Transparency and Trust: Promote responsiveness and innovation
+                                </li>
+                                <li><i class="fas fa-check-circle"></i>Security and Regulatory Compliance: Safeguard assets and reputation
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-chart-line"></i> Productivity and Collaboration</li>
+                                <li><i class="fas fa-database"></i> Knowledge Management and Governance</li>
+                                <li><i class="fas fa-network-wired"></i> Data Architecture, Engineering, and Operations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Analytics Section -->
+        <section id="data-analytics" class="data-analytics section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Data Analytics, Artificial Intelligence and Machine Learning</h2>
+                <div class="section-content">
+                    <p>With the vast availability of cost-effective compute and storage capabilities in the cloud, along with advancements in AI software, there are unparalleled opportunities to analyze data in innovative ways. The key challenge is understanding your data assets and addressing any gaps. By ensuring secure access to your data and tackling deficits in data capture, you can unlock valuable insights that have the potential to revolutionize your business.</p>
+                    <div class="outcomes-services">
+                        <div class="outcomes">
+                            <h3>Outcomes include:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>Predictive Decision-Making: Leverage modern models to gain deep insights</li>
+                                <li><i class="fas fa-check-circle"></i> Creative Solutions for Complex Problems: Innovate new solutions for intractable issues</li>
+                            </ul>
+                        </div>
+                        <div class="services">
+                            <h3>Services include:</h3>
+                            <ul>
+                                <li><i class="fas fa-shield-alt"></i> Data Governance and Management</li>
+                                <li><i class="fas fa-brain"></i> Data Science and Engineering</li>
+                                <li><i class="fas fa-chart-bar"></i> Reporting and Analytics</li>
+                                <li><i class="fas fa-robot"></i> Artificial Intelligence and Machine Learning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differentiator Summary Section -->
+        <section id="differentiator-summary" class="differentiator-summary section-card" data-aos="fade-up">
+            <div class="container">
+                <h2>Summary</h2>
+                <div class="section-content">
+                    <div class="diff-card">
+                        <p>We begin with an affordable consultation, followed by strategic planning, design, and a customized implementation to provide the most effective solution for each client. Our hybrid agile methodology is adaptable, scalable, and optimized to reduce time-to-value, maximize digitalization investments, and minimize risk. By blending our team's expertise with industry best practices and research, we ensure measurable business outcomes and consistent success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -25,59 +267,153 @@
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="../services/digitalization.html">Digitalization</a></li>
-                        <li><a href="../services/business-technology-transformation.html">Business Technology Transformation</a></li>
-                        <li><a href="../services/cybersecurity-services.html">Cybersecurity Services</a></li>
-                        <li><a href="../services/operations-management.html">Operations Management</a></li>
-                        <li><a href="../services/talent-mobilization.html">Talent Mobilization</a></li>
+                        <li><a href="Digitalization.html">Digitalization</a></li>
+                        <li><a href="Business_Technology.html">Business Transformation</a></li>
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="Operations_Management.html">Operations Management</a></li>
+                        <li><a href="Talent_Mobilization.html">Talent Mobilization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Specializations</h4>
+                    <ul>
+                        <li><a href="../specalizations/Enterprise_Architecture.html">Enterprise Architecture</a></li>
+                        <li><a href="../specalizations/Salesforce.html">Salesforce</a></li>
+                        <li><a href="../specalizations/Cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="../specalizations/Data_Analytics.html">Data Analytics with AI / ML</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>  <!--  Replace # with actual links -->
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="../contact-us.html">Contact</a></li>
+                        <li><a href="../what-we-do.html">What we do</a></li>
+                        <li><a href="../who-we-serve.html">Who we serve</a></li>
+                        <li><a href="../Why-Synapse-AI.html">Why Synapse AI</a></li>
+                        <li><a href="../contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Connect</h4>
                     <div class="social-icons">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>  <!-- Replace # with real links -->
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/company/synapse4ai" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Prajay AI Labs. All rights reserved.</p>
-            <ul class="legal-links">
-                <li><a href="#">Privacy Policy</a></li>  <!-- Replace # with actual links -->
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
+            <p>© 2025 Synapse AI. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Include AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
+     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animation library
+             // Initialize AOS for animations.  Use 'data-aos' attribute in HTML.
             AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
+                duration: 800,       // Animation duration
+                easing: 'ease-in-out', // Easing function
+                once: true,         // Animate only once
+                offset: 100        // Offset (in px) from the original trigger point
             });
-
-            // Mobile menu toggle
+            
+            // Mobile menu toggle (for smaller screens)
             const menuToggle = document.querySelector('.mobile-menu-toggle');
             const navList = document.querySelector('.nav-list');
-
-            if (menuToggle) {
+            if (menuToggle && navList) {
                 menuToggle.addEventListener('click', () => {
-                    navList.classList.toggle('active');
+                    if (navList) {
+                        navList.classList.toggle('active');
+                    }
                 });
+            }
+
+            // Smooth scrolling and sticky header logic
+            let isScrolling = false;
+
+            function smoothScroll(target) {
+              const targetElement = document.querySelector(target);
+              const servicesNav = document.getElementById('services-nav');
+              if (targetElement && servicesNav) {
+                const headerOffset = servicesNav.offsetHeight;
+                const elementPosition = targetElement.offsetTop;
+                const offsetPosition = elementPosition - headerOffset;
+
+                // Only if window > 768px, then smooth scrolling.
+                if (window.innerWidth > 768) {
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+                else {
+                   // For smaller screens, include main header offset
+                   const mainHeader = document.getElementById('main-header');
+                   if (mainHeader) {
+                       const mainHeaderOffset = mainHeader.offsetHeight;
+                       const smallScreenOffsetPosition = elementPosition - headerOffset - mainHeaderOffset;
+                       window.scrollTo({
+                          top: smallScreenOffsetPosition,
+                          behavior: "smooth"
+                       });
+                   }
+                }
+              }
+            }
+
+            const serviceLinks = document.querySelectorAll('.service-link');
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();  // Prevent default anchor behavior
+                    const target = this.getAttribute('href');
+                    smoothScroll(target); // Call smooth scroll function
+                });
+            });
+
+            // Function to set the active link based on scroll position
+            function setActiveLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const servicesNav = document.getElementById('services-nav');
+                if (servicesNav) {
+                    let scrollPosition = window.scrollY + servicesNav.offsetHeight + 10;  // Add a small buffer
+
+                    sections.forEach(section => {
+                        // Check if the current section is in view
+                        if (section.offsetTop <= scrollPosition &&
+                            (section.offsetTop + section.offsetHeight) > scrollPosition)
+                           {
+                            serviceLinks.forEach(link => {
+                                link.classList.remove('active');
+                                // Add 'active' class to the corresponding link
+                                if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
+                                    link.classList.add('active');
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+            // Sticky header functionality.  Adds 'sticky' class when scrolled.
+            const header = document.getElementById('services-nav');
+            if (header) {
+                let sticky = header.offsetTop;
+
+                function handleScroll() {
+                  if (!isScrolling) {  // Regular scroll
+                    if (window.pageYOffset > sticky) {
+                      header.classList.add("sticky");
+                      document.body.style.paddingTop = header.offsetHeight + 'px'; // Prevent content jump
+                    } else {
+                      header.classList.remove("sticky");
+                       document.body.style.paddingTop = '0px';
+                    }
+                  }
+
+                    setActiveLink(); // Update active link on scroll
+                }
+
+                window.addEventListener('scroll', handleScroll);
             }
         });
     </script>
